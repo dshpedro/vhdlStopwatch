@@ -1,8 +1,0 @@
-|latchRS
-S => Q.IN0
-R => comb.IN1
-R => Q.IN1
-R => comb.IN1
-Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
-
-
