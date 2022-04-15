@@ -1,0 +1,30 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity freqDivider is
+    port(
+    clk50 : in std_logic;
+    freqOut : out std_logic
+    );
+end freqDivider;
+
+architecture behav of freqDivider is
+signal i : integer;
+begin
+
+    process(clk50)
+    begin
+    
+    
+    if rising_edge(clk50) then
+        i <= i + 1;
+    end if;
+    if i = 50 then
+        freqOut <= '0';
+        i <= 0;
+    freqOut <= '1';
+    end if;
+    
+    end process;
+
+end behav;

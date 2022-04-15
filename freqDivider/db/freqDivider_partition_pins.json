@@ -1,0 +1,17 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "freqOut",
+					"strict" : false
+				},
+				{
+					"name" : "clk50M",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
