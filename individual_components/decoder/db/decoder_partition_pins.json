@@ -1,0 +1,53 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "decoderOut[6]",
+					"strict" : false
+				},
+				{
+					"name" : "decoderOut[5]",
+					"strict" : false
+				},
+				{
+					"name" : "decoderOut[4]",
+					"strict" : false
+				},
+				{
+					"name" : "decoderOut[3]",
+					"strict" : false
+				},
+				{
+					"name" : "decoderOut[2]",
+					"strict" : false
+				},
+				{
+					"name" : "decoderOut[1]",
+					"strict" : false
+				},
+				{
+					"name" : "decoderOut[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dcba[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dcba[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dcba[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dcba[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
