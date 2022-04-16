@@ -28,7 +28,15 @@ end component;
 component counter is  -- contador bcd de 4 bits
     port(
         CLK, R : in std_logic;
+        Tclk : out std_logic;
         Q : buffer std_logic_vector(0 to 3)
+    );
+end component;
+
+component decoder is
+    port(
+        dcba : in std_logic_vector(0 to 3);
+        decoderOut : out std_logic_vector(0 to 6)
     );
 end component;
 
@@ -38,21 +46,26 @@ signal counterReset : std_logic; -- reset do contador
 signal oneHz : std_logic; -- f = 1Hz
 signal clkCounter0 : std_logic; -- clock do contador menos significativo
 
-signal phvector : std_logic_vector(0 to 3); -- 4 bits placeholder vector
+signal tclk3, tclk2, tclk1, tclk0 : std_logic; -- "Tclk" responsáveis por ativar o próximo contador
+signal ctr3Q, ctr2Q, ctr1Q, ctr0Q : std_logic_vector(0 to 3); -- saídas Q dos contadores
+
 begin
 
-
     lat : latchRS port map ( S => Button2, R => Button1, Q => latQ );
-    
     freqDiv : freqDivider port map ( clkIN => Clock_50 , freqOut => oneHz );
     
-    counter3 : counter port map ( CLK => clkCounter0, R => counterReset  , Q => phvector);
-    counter2 : counter port map ( CLK => clkCounter0, R => counterReset  , Q => phvector);
-    counter1 : counter port map ( CLK => clkCounter0, R => counterReset  , Q => phvector);
-    counter0 : counter port map ( CLK => clkCounter0, R => counterReset  , Q => phvector);
+    ctr0 : counter port map ( CLK => clkCounter0, R => counterReset, Tclk => tclk0 , Q => ctr0Q);
+    ctr1 : counter port map ( CLK => tclk0, R => counterReset, Tclk => tclk1, Q => ctr1Q);
+    ctr2 : counter port map ( CLK => tclk1, R => counterReset, Tclk => tclk2, Q => ctr2Q);
+    ctr3 : counter port map ( CLK => tclk2, R => counterReset, Tclk => tclk3 , Q => ctr3Q);
     
-    counterReset <= (not Button0) or (not latQ); 
+    decod0 : decoder port map ( dcba => ctr0Q, decoderOut => HEX0_D);
+    decod1 : decoder port map ( dcba => ctr1Q, decoderOut => HEX1_D);
+    decod2 : decoder port map ( dcba => ctr2Q, decoderOut => HEX2_D);
+    decod3 : decoder port map ( dcba => ctr3Q, decoderOut => HEX3_D);
+    
     
     clkCounter0 <= latQ and oneHz;
+    counterReset <= (not Button0) or (not latQ); 
     
 end behav;

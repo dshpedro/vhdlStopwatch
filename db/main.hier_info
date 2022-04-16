@@ -3,34 +3,34 @@ Button0 => counterReset.IN1
 Button1 => latchRS:lat.R
 Button2 => latchRS:lat.S
 Clock_50 => freqDivider:freqDiv.clkIN
-HEX3_D[6] <= HEX3_D[6].DB_MAX_OUTPUT_PORT_TYPE
-HEX3_D[5] <= HEX3_D[5].DB_MAX_OUTPUT_PORT_TYPE
-HEX3_D[4] <= HEX3_D[4].DB_MAX_OUTPUT_PORT_TYPE
-HEX3_D[3] <= HEX3_D[3].DB_MAX_OUTPUT_PORT_TYPE
-HEX3_D[2] <= HEX3_D[2].DB_MAX_OUTPUT_PORT_TYPE
-HEX3_D[1] <= HEX3_D[1].DB_MAX_OUTPUT_PORT_TYPE
-HEX3_D[0] <= HEX3_D[0].DB_MAX_OUTPUT_PORT_TYPE
-HEX2_D[6] <= HEX2_D[6].DB_MAX_OUTPUT_PORT_TYPE
-HEX2_D[5] <= HEX2_D[5].DB_MAX_OUTPUT_PORT_TYPE
-HEX2_D[4] <= HEX2_D[4].DB_MAX_OUTPUT_PORT_TYPE
-HEX2_D[3] <= HEX2_D[3].DB_MAX_OUTPUT_PORT_TYPE
-HEX2_D[2] <= HEX2_D[2].DB_MAX_OUTPUT_PORT_TYPE
-HEX2_D[1] <= HEX2_D[1].DB_MAX_OUTPUT_PORT_TYPE
-HEX2_D[0] <= HEX2_D[0].DB_MAX_OUTPUT_PORT_TYPE
-HEX1_D[6] <= HEX1_D[6].DB_MAX_OUTPUT_PORT_TYPE
-HEX1_D[5] <= HEX1_D[5].DB_MAX_OUTPUT_PORT_TYPE
-HEX1_D[4] <= HEX1_D[4].DB_MAX_OUTPUT_PORT_TYPE
-HEX1_D[3] <= HEX1_D[3].DB_MAX_OUTPUT_PORT_TYPE
-HEX1_D[2] <= HEX1_D[2].DB_MAX_OUTPUT_PORT_TYPE
-HEX1_D[1] <= HEX1_D[1].DB_MAX_OUTPUT_PORT_TYPE
-HEX1_D[0] <= HEX1_D[0].DB_MAX_OUTPUT_PORT_TYPE
-HEX0_D[6] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-HEX0_D[5] <= HEX0_D[5].DB_MAX_OUTPUT_PORT_TYPE
-HEX0_D[4] <= HEX0_D[4].DB_MAX_OUTPUT_PORT_TYPE
-HEX0_D[3] <= HEX0_D[3].DB_MAX_OUTPUT_PORT_TYPE
-HEX0_D[2] <= HEX0_D[2].DB_MAX_OUTPUT_PORT_TYPE
-HEX0_D[1] <= HEX0_D[1].DB_MAX_OUTPUT_PORT_TYPE
-HEX0_D[0] <= HEX0_D[0].DB_MAX_OUTPUT_PORT_TYPE
+HEX3_D[6] <= decoder:decod3.decoderOut[6]
+HEX3_D[5] <= decoder:decod3.decoderOut[5]
+HEX3_D[4] <= decoder:decod3.decoderOut[4]
+HEX3_D[3] <= decoder:decod3.decoderOut[3]
+HEX3_D[2] <= decoder:decod3.decoderOut[2]
+HEX3_D[1] <= decoder:decod3.decoderOut[1]
+HEX3_D[0] <= decoder:decod3.decoderOut[0]
+HEX2_D[6] <= decoder:decod2.decoderOut[6]
+HEX2_D[5] <= decoder:decod2.decoderOut[5]
+HEX2_D[4] <= decoder:decod2.decoderOut[4]
+HEX2_D[3] <= decoder:decod2.decoderOut[3]
+HEX2_D[2] <= decoder:decod2.decoderOut[2]
+HEX2_D[1] <= decoder:decod2.decoderOut[1]
+HEX2_D[0] <= decoder:decod2.decoderOut[0]
+HEX1_D[6] <= decoder:decod1.decoderOut[6]
+HEX1_D[5] <= decoder:decod1.decoderOut[5]
+HEX1_D[4] <= decoder:decod1.decoderOut[4]
+HEX1_D[3] <= decoder:decod1.decoderOut[3]
+HEX1_D[2] <= decoder:decod1.decoderOut[2]
+HEX1_D[1] <= decoder:decod1.decoderOut[1]
+HEX1_D[0] <= decoder:decod1.decoderOut[0]
+HEX0_D[6] <= decoder:decod0.decoderOut[6]
+HEX0_D[5] <= decoder:decod0.decoderOut[5]
+HEX0_D[4] <= decoder:decod0.decoderOut[4]
+HEX0_D[3] <= decoder:decod0.decoderOut[3]
+HEX0_D[2] <= decoder:decod0.decoderOut[2]
+HEX0_D[1] <= decoder:decod0.decoderOut[1]
+HEX0_D[0] <= decoder:decod0.decoderOut[0]
 
 
 |main|latchRS:lat
@@ -78,7 +78,7 @@ clkIN => i[31].CLK
 freqOut <= freqOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|counter:counter3
+|main|counter:ctr0
 CLK => Q[3]~reg0.CLK
 CLK => Q[2]~reg0.CLK
 CLK => Q[1]~reg0.CLK
@@ -87,13 +87,14 @@ R => Q[3]~reg0.ACLR
 R => Q[2]~reg0.ACLR
 R => Q[1]~reg0.ACLR
 R => Q[0]~reg0.ACLR
+Tclk <= Tclk.DB_MAX_OUTPUT_PORT_TYPE
 Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|counter:counter2
+|main|counter:ctr1
 CLK => Q[3]~reg0.CLK
 CLK => Q[2]~reg0.CLK
 CLK => Q[1]~reg0.CLK
@@ -102,13 +103,14 @@ R => Q[3]~reg0.ACLR
 R => Q[2]~reg0.ACLR
 R => Q[1]~reg0.ACLR
 R => Q[0]~reg0.ACLR
+Tclk <= Tclk.DB_MAX_OUTPUT_PORT_TYPE
 Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|counter:counter1
+|main|counter:ctr2
 CLK => Q[3]~reg0.CLK
 CLK => Q[2]~reg0.CLK
 CLK => Q[1]~reg0.CLK
@@ -117,13 +119,14 @@ R => Q[3]~reg0.ACLR
 R => Q[2]~reg0.ACLR
 R => Q[1]~reg0.ACLR
 R => Q[0]~reg0.ACLR
+Tclk <= Tclk.DB_MAX_OUTPUT_PORT_TYPE
 Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|counter:counter0
+|main|counter:ctr3
 CLK => Q[3]~reg0.CLK
 CLK => Q[2]~reg0.CLK
 CLK => Q[1]~reg0.CLK
@@ -132,9 +135,162 @@ R => Q[3]~reg0.ACLR
 R => Q[2]~reg0.ACLR
 R => Q[1]~reg0.ACLR
 R => Q[0]~reg0.ACLR
+Tclk <= Tclk.DB_MAX_OUTPUT_PORT_TYPE
 Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|decoder:decod0
+dcba[3] => Mux0.IN19
+dcba[3] => Mux1.IN19
+dcba[3] => Mux2.IN19
+dcba[3] => Mux3.IN19
+dcba[3] => Mux4.IN19
+dcba[3] => Mux5.IN19
+dcba[3] => Mux6.IN19
+dcba[2] => Mux0.IN18
+dcba[2] => Mux1.IN18
+dcba[2] => Mux2.IN18
+dcba[2] => Mux3.IN18
+dcba[2] => Mux4.IN18
+dcba[2] => Mux5.IN18
+dcba[2] => Mux6.IN18
+dcba[1] => Mux0.IN17
+dcba[1] => Mux1.IN17
+dcba[1] => Mux2.IN17
+dcba[1] => Mux3.IN17
+dcba[1] => Mux4.IN17
+dcba[1] => Mux5.IN17
+dcba[1] => Mux6.IN17
+dcba[0] => Mux0.IN16
+dcba[0] => Mux1.IN16
+dcba[0] => Mux2.IN16
+dcba[0] => Mux3.IN16
+dcba[0] => Mux4.IN16
+dcba[0] => Mux5.IN16
+dcba[0] => Mux6.IN16
+decoderOut[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|decoder:decod1
+dcba[3] => Mux0.IN19
+dcba[3] => Mux1.IN19
+dcba[3] => Mux2.IN19
+dcba[3] => Mux3.IN19
+dcba[3] => Mux4.IN19
+dcba[3] => Mux5.IN19
+dcba[3] => Mux6.IN19
+dcba[2] => Mux0.IN18
+dcba[2] => Mux1.IN18
+dcba[2] => Mux2.IN18
+dcba[2] => Mux3.IN18
+dcba[2] => Mux4.IN18
+dcba[2] => Mux5.IN18
+dcba[2] => Mux6.IN18
+dcba[1] => Mux0.IN17
+dcba[1] => Mux1.IN17
+dcba[1] => Mux2.IN17
+dcba[1] => Mux3.IN17
+dcba[1] => Mux4.IN17
+dcba[1] => Mux5.IN17
+dcba[1] => Mux6.IN17
+dcba[0] => Mux0.IN16
+dcba[0] => Mux1.IN16
+dcba[0] => Mux2.IN16
+dcba[0] => Mux3.IN16
+dcba[0] => Mux4.IN16
+dcba[0] => Mux5.IN16
+dcba[0] => Mux6.IN16
+decoderOut[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|decoder:decod2
+dcba[3] => Mux0.IN19
+dcba[3] => Mux1.IN19
+dcba[3] => Mux2.IN19
+dcba[3] => Mux3.IN19
+dcba[3] => Mux4.IN19
+dcba[3] => Mux5.IN19
+dcba[3] => Mux6.IN19
+dcba[2] => Mux0.IN18
+dcba[2] => Mux1.IN18
+dcba[2] => Mux2.IN18
+dcba[2] => Mux3.IN18
+dcba[2] => Mux4.IN18
+dcba[2] => Mux5.IN18
+dcba[2] => Mux6.IN18
+dcba[1] => Mux0.IN17
+dcba[1] => Mux1.IN17
+dcba[1] => Mux2.IN17
+dcba[1] => Mux3.IN17
+dcba[1] => Mux4.IN17
+dcba[1] => Mux5.IN17
+dcba[1] => Mux6.IN17
+dcba[0] => Mux0.IN16
+dcba[0] => Mux1.IN16
+dcba[0] => Mux2.IN16
+dcba[0] => Mux3.IN16
+dcba[0] => Mux4.IN16
+dcba[0] => Mux5.IN16
+dcba[0] => Mux6.IN16
+decoderOut[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|decoder:decod3
+dcba[3] => Mux0.IN19
+dcba[3] => Mux1.IN19
+dcba[3] => Mux2.IN19
+dcba[3] => Mux3.IN19
+dcba[3] => Mux4.IN19
+dcba[3] => Mux5.IN19
+dcba[3] => Mux6.IN19
+dcba[2] => Mux0.IN18
+dcba[2] => Mux1.IN18
+dcba[2] => Mux2.IN18
+dcba[2] => Mux3.IN18
+dcba[2] => Mux4.IN18
+dcba[2] => Mux5.IN18
+dcba[2] => Mux6.IN18
+dcba[1] => Mux0.IN17
+dcba[1] => Mux1.IN17
+dcba[1] => Mux2.IN17
+dcba[1] => Mux3.IN17
+dcba[1] => Mux4.IN17
+dcba[1] => Mux5.IN17
+dcba[1] => Mux6.IN17
+dcba[0] => Mux0.IN16
+dcba[0] => Mux1.IN16
+dcba[0] => Mux2.IN16
+dcba[0] => Mux3.IN16
+dcba[0] => Mux4.IN16
+dcba[0] => Mux5.IN16
+dcba[0] => Mux6.IN16
+decoderOut[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+decoderOut[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 

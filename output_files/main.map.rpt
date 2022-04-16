@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Sat Apr 16 10:40:00 2022
+Sat Apr 16 14:00:57 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -13,14 +13,13 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Port Connectivity Checks: "counter:counter0"
- 10. Port Connectivity Checks: "counter:counter1"
- 11. Port Connectivity Checks: "counter:counter2"
- 12. Port Connectivity Checks: "counter:counter3"
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Port Connectivity Checks: "counter:ctr3"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -47,13 +46,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Apr 16 10:40:00 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sat Apr 16 14:00:57 2022       ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                   ; main                                        ;
 ; Top-level Entity Name           ; main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
+; Total registers                 ; 49                                          ;
 ; Total pins                      ; 32                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -163,10 +162,11 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -177,46 +177,68 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
 ; main.vhd                         ; yes             ; User VHDL File  ; C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd        ;         ;
 ; counter.vhd                      ; yes             ; User VHDL File  ; C:/Users/pedro/Documents/GitHub/vhdlStopwatch/counter.vhd     ;         ;
+; decoder.vhd                      ; yes             ; User VHDL File  ; C:/Users/pedro/Documents/GitHub/vhdlStopwatch/decoder.vhd     ;         ;
 ; freqDivider.vhd                  ; yes             ; User VHDL File  ; C:/Users/pedro/Documents/GitHub/vhdlStopwatch/freqDivider.vhd ;         ;
 ; latchRS.vhd                      ; yes             ; User VHDL File  ; C:/Users/pedro/Documents/GitHub/vhdlStopwatch/latchRS.vhd     ;         ;
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary           ;
-+---------------------------------------------+---------+
-; Resource                                    ; Usage   ;
-+---------------------------------------------+---------+
-; Estimate of Logic utilization (ALMs needed) ; 0       ;
-;                                             ;         ;
-; Combinational ALUT usage for logic          ; 0       ;
-;     -- 7 input functions                    ; 0       ;
-;     -- 6 input functions                    ; 0       ;
-;     -- 5 input functions                    ; 0       ;
-;     -- 4 input functions                    ; 0       ;
-;     -- <=3 input functions                  ; 0       ;
-;                                             ;         ;
-; Dedicated logic registers                   ; 0       ;
-;                                             ;         ;
-; I/O pins                                    ; 32      ;
-;                                             ;         ;
-; Total DSP Blocks                            ; 0       ;
-;                                             ;         ;
-; Maximum fan-out node                        ; Button0 ;
-; Maximum fan-out                             ; 1       ;
-; Total fan-out                               ; 32      ;
-; Average fan-out                             ; 0.50    ;
-+---------------------------------------------+---------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 49             ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 91             ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 6              ;
+;     -- 5 input functions                    ; 0              ;
+;     -- 4 input functions                    ; 36             ;
+;     -- <=3 input functions                  ; 49             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 49             ;
+;                                             ;                ;
+; I/O pins                                    ; 32             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; Clock_50~input ;
+; Maximum fan-out                             ; 33             ;
+; Total fan-out                               ; 482            ;
+; Average fan-out                             ; 2.36           ;
++---------------------------------------------+----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |main                      ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 32   ; 0            ; |main               ; main        ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                          ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name       ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------+-------------+--------------+
+; |main                      ; 91 (2)              ; 49 (0)                    ; 0                 ; 0          ; 32   ; 0            ; |main                     ; main        ; work         ;
+;    |counter:ctr0|          ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main|counter:ctr0        ; counter     ; work         ;
+;    |counter:ctr1|          ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main|counter:ctr1        ; counter     ; work         ;
+;    |counter:ctr2|          ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main|counter:ctr2        ; counter     ; work         ;
+;    |counter:ctr3|          ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main|counter:ctr3        ; counter     ; work         ;
+;    |decoder:decod0|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|decoder:decod0      ; decoder     ; work         ;
+;    |decoder:decod1|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|decoder:decod1      ; decoder     ; work         ;
+;    |decoder:decod2|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|decoder:decod2      ; decoder     ; work         ;
+;    |decoder:decod3|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|decoder:decod3      ; decoder     ; work         ;
+;    |freqDivider:freqDiv|   ; 41 (41)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |main|freqDivider:freqDiv ; freqDivider ; work         ;
+;    |latchRS:lat|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|latchRS:lat         ; latchRS     ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; latchRS:lat|Q                                      ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -224,49 +246,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 49    ;
+; Number of registers using Synchronous Clear  ; 31    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 16    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter:counter0"                                                                   ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; freqDivider:freqDiv|i[0]               ; 2       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter:counter1"                                                                   ;
+; Port Connectivity Checks: "counter:ctr3"                                                                       ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter:counter2"                                                                   ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter:counter3"                                                                   ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; tclk ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -275,13 +280,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
+; arriav_ff             ; 49                          ;
+;     CLR               ; 16                          ;
+;     SCLR              ; 31                          ;
+;     plain             ; 2                           ;
+; arriav_lcell_comb     ; 95                          ;
+;     arith             ; 32                          ;
+;         1 data inputs ; 32                          ;
+;     normal            ; 63                          ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 36                          ;
+;         6 data inputs ; 6                           ;
 ; boundary_port         ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 4.10                        ;
+; Average LUT depth     ; 2.43                        ;
 +-----------------------+-----------------------------+
 
 
@@ -300,7 +315,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Sat Apr 16 10:39:55 2022
+    Info: Processing started: Sat Apr 16 14:00:51 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off stopwatch -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -308,7 +323,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file main.vh
     Info (12022): Found design unit 1: main-behav File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 11
     Info (12023): Found entity 1: main File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file counter.vhd
-    Info (12022): Found design unit 1: counter-behav File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/counter.vhd Line: 14
+    Info (12022): Found design unit 1: counter-behav File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/counter.vhd Line: 15
     Info (12023): Found entity 1: counter File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/counter.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhd
     Info (12022): Found design unit 1: decoder-behav File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/decoder.vhd Line: 11
@@ -320,59 +335,24 @@ Info (12021): Found 2 design units, including 1 entities, in source file latchrs
     Info (12022): Found design unit 1: latchRS-behav File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/latchRS.vhd Line: 12
     Info (12023): Found entity 1: latchRS File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/latchRS.vhd Line: 4
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at main.vhd(7): used implicit default value for signal "HEX3_D" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-Warning (10541): VHDL Signal Declaration warning at main.vhd(7): used implicit default value for signal "HEX2_D" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-Warning (10541): VHDL Signal Declaration warning at main.vhd(7): used implicit default value for signal "HEX1_D" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-Warning (10541): VHDL Signal Declaration warning at main.vhd(7): used implicit default value for signal "HEX0_D" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(41): object "phvector" assigned a value but never read File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 41
-Info (12128): Elaborating entity "latchRS" for hierarchy "latchRS:lat" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 45
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(49): object "tclk3" assigned a value but never read File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 49
+Info (12128): Elaborating entity "latchRS" for hierarchy "latchRS:lat" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 55
 Warning (10631): VHDL Process Statement warning at latchRS.vhd(14): inferring latch(es) for signal or variable "Q", which holds its previous value in one or more paths through the process File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/latchRS.vhd Line: 14
 Info (10041): Inferred latch for "Q" at latchRS.vhd(14) File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/latchRS.vhd Line: 14
-Info (12128): Elaborating entity "freqDivider" for hierarchy "freqDivider:freqDiv" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 47
-Info (12128): Elaborating entity "counter" for hierarchy "counter:counter3" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 49
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX3_D[6]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX3_D[5]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX3_D[4]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX3_D[3]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX3_D[2]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX3_D[1]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX3_D[0]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX2_D[6]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX2_D[5]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX2_D[4]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX2_D[3]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX2_D[2]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX2_D[1]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX2_D[0]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX1_D[6]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX1_D[5]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX1_D[4]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX1_D[3]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX1_D[2]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX1_D[1]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX1_D[0]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX0_D[6]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX0_D[5]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX0_D[4]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX0_D[3]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX0_D[2]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX0_D[1]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-    Warning (13410): Pin "HEX0_D[0]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
+Info (12128): Elaborating entity "freqDivider" for hierarchy "freqDivider:freqDiv" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 56
+Info (12128): Elaborating entity "counter" for hierarchy "counter:ctr0" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 58
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:decod0" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 63
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "Button0" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 6
-    Warning (15610): No output dependent on input pin "Button1" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 6
-    Warning (15610): No output dependent on input pin "Button2" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 6
-    Warning (15610): No output dependent on input pin "Clock_50" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 6
-Info (21057): Implemented 32 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 123 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 28 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 41 warnings
-    Info: Peak virtual memory: 4863 megabytes
-    Info: Processing ended: Sat Apr 16 10:40:00 2022
-    Info: Elapsed time: 00:00:05
+    Info (21061): Implemented 91 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4905 megabytes
+    Info: Processing ended: Sat Apr 16 14:00:57 2022
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:11
 
 
