@@ -1,5 +1,5 @@
 Flow report for main
-Fri Apr 15 17:05:15 2022
+Sat Apr 16 10:40:33 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Fri Apr 15 17:05:11 2022       ;
+; Flow Status                     ; Successful - Sat Apr 16 10:40:29 2022       ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                   ; main                                        ;
 ; Top-level Entity Name           ; main                                        ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/15/2022 17:04:37 ;
+; Start date & time ; 04/16/2022 10:39:55 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; main                ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 66504338472869.165005307715560         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 66504338472869.165011639503420         ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -92,11 +92,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 4855 MB             ; 00:00:11                           ;
-; Fitter               ; 00:00:23     ; 1.0                     ; 7385 MB             ; 00:01:31                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 4874 MB             ; 00:00:04                           ;
+; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 4863 MB             ; 00:00:11                           ;
+; Fitter               ; 00:00:22     ; 1.0                     ; 7389 MB             ; 00:01:31                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 4878 MB             ; 00:00:04                           ;
 ; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 5238 MB             ; 00:00:03                           ;
-; Total                ; 00:00:36     ; --                      ; --                  ; 00:01:49                           ;
+; Total                ; 00:00:34     ; --                      ; --                  ; 00:01:49                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

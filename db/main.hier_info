@@ -2,7 +2,7 @@
 Button0 => counterReset.IN1
 Button1 => latchRS:lat.R
 Button2 => latchRS:lat.S
-Clock_50 => ~NO_FANOUT~
+Clock_50 => freqDivider:freqDiv.clkIN
 HEX3_D[6] <= HEX3_D[6].DB_MAX_OUTPUT_PORT_TYPE
 HEX3_D[5] <= HEX3_D[5].DB_MAX_OUTPUT_PORT_TYPE
 HEX3_D[4] <= HEX3_D[4].DB_MAX_OUTPUT_PORT_TYPE
@@ -41,7 +41,89 @@ R => comb.IN1
 Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|main|freqDivider:freqDiv
+clkIN => freqOut~reg0.CLK
+clkIN => i[0].CLK
+clkIN => i[1].CLK
+clkIN => i[2].CLK
+clkIN => i[3].CLK
+clkIN => i[4].CLK
+clkIN => i[5].CLK
+clkIN => i[6].CLK
+clkIN => i[7].CLK
+clkIN => i[8].CLK
+clkIN => i[9].CLK
+clkIN => i[10].CLK
+clkIN => i[11].CLK
+clkIN => i[12].CLK
+clkIN => i[13].CLK
+clkIN => i[14].CLK
+clkIN => i[15].CLK
+clkIN => i[16].CLK
+clkIN => i[17].CLK
+clkIN => i[18].CLK
+clkIN => i[19].CLK
+clkIN => i[20].CLK
+clkIN => i[21].CLK
+clkIN => i[22].CLK
+clkIN => i[23].CLK
+clkIN => i[24].CLK
+clkIN => i[25].CLK
+clkIN => i[26].CLK
+clkIN => i[27].CLK
+clkIN => i[28].CLK
+clkIN => i[29].CLK
+clkIN => i[30].CLK
+clkIN => i[31].CLK
+freqOut <= freqOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |main|counter:counter3
+CLK => Q[3]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[0]~reg0.CLK
+R => Q[3]~reg0.ACLR
+R => Q[2]~reg0.ACLR
+R => Q[1]~reg0.ACLR
+R => Q[0]~reg0.ACLR
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|counter:counter2
+CLK => Q[3]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[0]~reg0.CLK
+R => Q[3]~reg0.ACLR
+R => Q[2]~reg0.ACLR
+R => Q[1]~reg0.ACLR
+R => Q[0]~reg0.ACLR
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|counter:counter1
+CLK => Q[3]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[0]~reg0.CLK
+R => Q[3]~reg0.ACLR
+R => Q[2]~reg0.ACLR
+R => Q[1]~reg0.ACLR
+R => Q[0]~reg0.ACLR
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|counter:counter0
 CLK => Q[3]~reg0.CLK
 CLK => Q[2]~reg0.CLK
 CLK => Q[1]~reg0.CLK

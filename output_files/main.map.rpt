@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Fri Apr 15 17:04:42 2022
+Sat Apr 16 10:40:00 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -14,10 +14,13 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "counter:counter3"
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  9. Port Connectivity Checks: "counter:counter0"
+ 10. Port Connectivity Checks: "counter:counter1"
+ 11. Port Connectivity Checks: "counter:counter2"
+ 12. Port Connectivity Checks: "counter:counter3"
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -44,7 +47,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Apr 15 17:04:42 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sat Apr 16 10:40:00 2022       ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                   ; main                                        ;
 ; Top-level Entity Name           ; main                                        ;
@@ -167,15 +170,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                     ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                              ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
-; main.vhd                         ; yes             ; User VHDL File  ; C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd    ;         ;
-; counter.vhd                      ; yes             ; User VHDL File  ; C:/Users/pedro/Documents/GitHub/vhdlStopwatch/counter.vhd ;         ;
-; latchRS.vhd                      ; yes             ; User VHDL File  ; C:/Users/pedro/Documents/GitHub/vhdlStopwatch/latchRS.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                  ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+; main.vhd                         ; yes             ; User VHDL File  ; C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd        ;         ;
+; counter.vhd                      ; yes             ; User VHDL File  ; C:/Users/pedro/Documents/GitHub/vhdlStopwatch/counter.vhd     ;         ;
+; freqDivider.vhd                  ; yes             ; User VHDL File  ; C:/Users/pedro/Documents/GitHub/vhdlStopwatch/freqDivider.vhd ;         ;
+; latchRS.vhd                      ; yes             ; User VHDL File  ; C:/Users/pedro/Documents/GitHub/vhdlStopwatch/latchRS.vhd     ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------+
@@ -231,6 +235,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter:counter0"                                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter:counter1"                                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter:counter2"                                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "counter:counter3"                                                                   ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
@@ -269,7 +300,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Fri Apr 15 17:04:37 2022
+    Info: Processing started: Sat Apr 16 10:39:55 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off stopwatch -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -293,11 +324,12 @@ Warning (10541): VHDL Signal Declaration warning at main.vhd(7): used implicit d
 Warning (10541): VHDL Signal Declaration warning at main.vhd(7): used implicit default value for signal "HEX2_D" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
 Warning (10541): VHDL Signal Declaration warning at main.vhd(7): used implicit default value for signal "HEX1_D" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
 Warning (10541): VHDL Signal Declaration warning at main.vhd(7): used implicit default value for signal "HEX0_D" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(29): object "phvector" assigned a value but never read File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 29
-Info (12128): Elaborating entity "latchRS" for hierarchy "latchRS:lat" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 32
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(41): object "phvector" assigned a value but never read File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 41
+Info (12128): Elaborating entity "latchRS" for hierarchy "latchRS:lat" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 45
 Warning (10631): VHDL Process Statement warning at latchRS.vhd(14): inferring latch(es) for signal or variable "Q", which holds its previous value in one or more paths through the process File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/latchRS.vhd Line: 14
 Info (10041): Inferred latch for "Q" at latchRS.vhd(14) File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/latchRS.vhd Line: 14
-Info (12128): Elaborating entity "counter" for hierarchy "counter:counter3" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 33
+Info (12128): Elaborating entity "freqDivider" for hierarchy "freqDivider:freqDiv" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 47
+Info (12128): Elaborating entity "counter" for hierarchy "counter:counter3" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 49
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX3_D[6]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
     Warning (13410): Pin "HEX3_D[5]" is stuck at GND File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 7
@@ -338,8 +370,8 @@ Info (21057): Implemented 32 device resources after synthesis - the final resour
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 28 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 41 warnings
-    Info: Peak virtual memory: 4856 megabytes
-    Info: Processing ended: Fri Apr 15 17:04:42 2022
+    Info: Peak virtual memory: 4863 megabytes
+    Info: Processing ended: Sat Apr 16 10:40:00 2022
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:11
 
