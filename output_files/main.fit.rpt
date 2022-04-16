@@ -1,5 +1,5 @@
 Fitter report for main
-Sat Apr 16 14:01:37 2022
+Sat Apr 16 17:20:29 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Sat Apr 16 14:01:37 2022       ;
+; Fitter Status                   ; Successful - Sat Apr 16 17:20:29 2022       ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                   ; main                                        ;
 ; Top-level Entity Name           ; main                                        ;
@@ -158,7 +158,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.2%      ;
 ;     Processor 3            ;   0.2%      ;
-;     Processor 4            ;   0.2%      ;
+;     Processor 4            ;   0.1%      ;
 ;     Processor 5            ;   0.1%      ;
 ;     Processor 6            ;   0.1%      ;
 ;     Processor 7            ;   0.1%      ;
@@ -1300,76 +1300,76 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
-+-------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary                                 ;
-+-----------------------------+-----------------------------+-------------------+
-; Source Clock(s)             ; Destination Clock(s)        ; Delay Added in ns ;
-+-----------------------------+-----------------------------+-------------------+
-; counter:ctr0|Q[0]           ; counter:ctr0|Q[0]           ; 8.5               ;
-; freqDivider:freqDiv|freqOut ; freqDivider:freqDiv|freqOut ; 8.1               ;
-; counter:ctr1|Q[0]           ; counter:ctr1|Q[0]           ; 7.1               ;
-; Clock_50                    ; Clock_50                    ; 5.2               ;
-; counter:ctr2|Q[0]           ; counter:ctr2|Q[0]           ; 3.6               ;
-+-----------------------------+-----------------------------+-------------------+
++-----------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                         ;
++-------------------------+-------------------------+-------------------+
+; Source Clock(s)         ; Destination Clock(s)    ; Delay Added in ns ;
++-------------------------+-------------------------+-------------------+
+; counter:ctr0|temp[0]    ; counter:ctr0|temp[0]    ; 8.5               ;
+; freqDivider:freqDiv|tmp ; freqDivider:freqDiv|tmp ; 8.1               ;
+; counter:ctr1|temp[0]    ; counter:ctr1|temp[0]    ; 7.1               ;
+; Clock_50                ; Clock_50                ; 5.2               ;
+; counter:ctr2|temp[0]    ; counter:ctr2|temp[0]    ; 3.6               ;
++-------------------------+-------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
 
-+-------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                 ;
-+-----------------------------+-----------------------------+-------------------+
-; Source Register             ; Destination Register        ; Delay Added in ns ;
-+-----------------------------+-----------------------------+-------------------+
-; freqDivider:freqDiv|freqOut ; freqDivider:freqDiv|freqOut ; 5.188             ;
-; counter:ctr1|Q[0]           ; counter:ctr1|Q[0]           ; 3.850             ;
-; counter:ctr0|Q[0]           ; counter:ctr0|Q[2]           ; 3.579             ;
-; counter:ctr2|Q[0]           ; counter:ctr2|Q[0]           ; 3.060             ;
-; freqDivider:freqDiv|i[30]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[29]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[28]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[27]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[31]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[25]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[24]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[23]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[22]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[21]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[20]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[19]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[18]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[17]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[16]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[15]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[14]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[12]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[11]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[10]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[9]    ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[8]    ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[7]    ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[6]    ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[5]    ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[4]    ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[3]    ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[2]    ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[1]    ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[0]    ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[26]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; freqDivider:freqDiv|i[13]   ; freqDivider:freqDiv|freqOut ; 2.339             ;
-; counter:ctr1|Q[3]           ; counter:ctr1|Q[0]           ; 1.832             ;
-; counter:ctr1|Q[2]           ; counter:ctr1|Q[0]           ; 1.832             ;
-; counter:ctr1|Q[1]           ; counter:ctr1|Q[0]           ; 1.832             ;
-; counter:ctr0|Q[3]           ; counter:ctr0|Q[2]           ; 1.766             ;
-; counter:ctr0|Q[2]           ; counter:ctr0|Q[2]           ; 1.766             ;
-; counter:ctr0|Q[1]           ; counter:ctr0|Q[2]           ; 1.766             ;
-; counter:ctr2|Q[3]           ; counter:ctr2|Q[0]           ; 1.530             ;
-; counter:ctr2|Q[2]           ; counter:ctr2|Q[0]           ; 1.530             ;
-; counter:ctr2|Q[1]           ; counter:ctr2|Q[0]           ; 1.530             ;
-; counter:ctr3|Q[3]           ; counter:ctr3|Q[0]           ; 0.686             ;
-; counter:ctr3|Q[2]           ; counter:ctr3|Q[0]           ; 0.669             ;
-; counter:ctr3|Q[1]           ; counter:ctr3|Q[0]           ; 0.635             ;
-; counter:ctr3|Q[0]           ; counter:ctr3|Q[2]           ; 0.627             ;
-+-----------------------------+-----------------------------+-------------------+
++-------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                           ;
++---------------------------+-------------------------+-------------------+
+; Source Register           ; Destination Register    ; Delay Added in ns ;
++---------------------------+-------------------------+-------------------+
+; freqDivider:freqDiv|tmp   ; freqDivider:freqDiv|tmp ; 5.188             ;
+; counter:ctr1|temp[0]      ; counter:ctr1|temp[0]    ; 3.850             ;
+; counter:ctr0|temp[0]      ; counter:ctr0|temp[2]    ; 3.579             ;
+; counter:ctr2|temp[0]      ; counter:ctr2|temp[0]    ; 3.060             ;
+; freqDivider:freqDiv|i[30] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[29] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[28] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[27] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[31] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[25] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[24] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[23] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[22] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[21] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[20] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[19] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[18] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[17] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[16] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[15] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[14] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[12] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[11] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[10] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[9]  ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[8]  ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[7]  ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[6]  ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[5]  ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[4]  ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[3]  ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[2]  ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[1]  ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[0]  ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[26] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; freqDivider:freqDiv|i[13] ; freqDivider:freqDiv|tmp ; 2.339             ;
+; counter:ctr1|temp[3]      ; counter:ctr1|temp[0]    ; 1.832             ;
+; counter:ctr1|temp[2]      ; counter:ctr1|temp[0]    ; 1.832             ;
+; counter:ctr1|temp[1]      ; counter:ctr1|temp[0]    ; 1.832             ;
+; counter:ctr0|temp[3]      ; counter:ctr0|temp[2]    ; 1.766             ;
+; counter:ctr0|temp[2]      ; counter:ctr0|temp[2]    ; 1.766             ;
+; counter:ctr0|temp[1]      ; counter:ctr0|temp[2]    ; 1.766             ;
+; counter:ctr2|temp[3]      ; counter:ctr2|temp[0]    ; 1.530             ;
+; counter:ctr2|temp[2]      ; counter:ctr2|temp[0]    ; 1.530             ;
+; counter:ctr2|temp[1]      ; counter:ctr2|temp[0]    ; 1.530             ;
+; counter:ctr3|temp[3]      ; counter:ctr3|temp[0]    ; 0.686             ;
+; counter:ctr3|temp[2]      ; counter:ctr3|temp[0]    ; 0.669             ;
+; counter:ctr3|temp[1]      ; counter:ctr3|temp[0]    ; 0.635             ;
+; counter:ctr3|temp[0]      ; counter:ctr3|temp[2]    ; 0.627             ;
++---------------------------+-------------------------+-------------------+
 Note: This table only shows the top 49 path(s) that have the largest delay added for hold.
 
 
@@ -1401,7 +1401,7 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Tim
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:11
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:10
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:04
@@ -1411,18 +1411,18 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.49 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.47 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:03
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
 Info (144001): Generated suppressed messages file C:/Users/pedro/Documents/GitHub/vhdlStopwatch/output_files/main.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 7448 megabytes
-    Info: Processing ended: Sat Apr 16 14:01:38 2022
-    Info: Elapsed time: 00:00:40
-    Info: Total CPU time (on all processors): 00:02:40
+    Info: Peak virtual memory: 7447 megabytes
+    Info: Processing ended: Sat Apr 16 17:20:30 2022
+    Info: Elapsed time: 00:00:39
+    Info: Total CPU time (on all processors): 00:02:43
 
 
 +----------------------------+

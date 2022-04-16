@@ -3,34 +3,34 @@ Button0 => counterReset.IN1
 Button1 => latchRS:lat.R
 Button2 => latchRS:lat.S
 Clock_50 => freqDivider:freqDiv.clkIN
-HEX3_D[6] <= decoder:decod3.decoderOut[6]
-HEX3_D[5] <= decoder:decod3.decoderOut[5]
-HEX3_D[4] <= decoder:decod3.decoderOut[4]
-HEX3_D[3] <= decoder:decod3.decoderOut[3]
-HEX3_D[2] <= decoder:decod3.decoderOut[2]
-HEX3_D[1] <= decoder:decod3.decoderOut[1]
-HEX3_D[0] <= decoder:decod3.decoderOut[0]
-HEX2_D[6] <= decoder:decod2.decoderOut[6]
-HEX2_D[5] <= decoder:decod2.decoderOut[5]
-HEX2_D[4] <= decoder:decod2.decoderOut[4]
-HEX2_D[3] <= decoder:decod2.decoderOut[3]
-HEX2_D[2] <= decoder:decod2.decoderOut[2]
-HEX2_D[1] <= decoder:decod2.decoderOut[1]
-HEX2_D[0] <= decoder:decod2.decoderOut[0]
-HEX1_D[6] <= decoder:decod1.decoderOut[6]
-HEX1_D[5] <= decoder:decod1.decoderOut[5]
-HEX1_D[4] <= decoder:decod1.decoderOut[4]
-HEX1_D[3] <= decoder:decod1.decoderOut[3]
-HEX1_D[2] <= decoder:decod1.decoderOut[2]
-HEX1_D[1] <= decoder:decod1.decoderOut[1]
-HEX1_D[0] <= decoder:decod1.decoderOut[0]
-HEX0_D[6] <= decoder:decod0.decoderOut[6]
-HEX0_D[5] <= decoder:decod0.decoderOut[5]
-HEX0_D[4] <= decoder:decod0.decoderOut[4]
-HEX0_D[3] <= decoder:decod0.decoderOut[3]
-HEX0_D[2] <= decoder:decod0.decoderOut[2]
-HEX0_D[1] <= decoder:decod0.decoderOut[1]
-HEX0_D[0] <= decoder:decod0.decoderOut[0]
+HEX3_D[6] << decoder:decod3.decoderOut[6]
+HEX3_D[5] << decoder:decod3.decoderOut[5]
+HEX3_D[4] << decoder:decod3.decoderOut[4]
+HEX3_D[3] << decoder:decod3.decoderOut[3]
+HEX3_D[2] << decoder:decod3.decoderOut[2]
+HEX3_D[1] << decoder:decod3.decoderOut[1]
+HEX3_D[0] << decoder:decod3.decoderOut[0]
+HEX2_D[6] << decoder:decod2.decoderOut[6]
+HEX2_D[5] << decoder:decod2.decoderOut[5]
+HEX2_D[4] << decoder:decod2.decoderOut[4]
+HEX2_D[3] << decoder:decod2.decoderOut[3]
+HEX2_D[2] << decoder:decod2.decoderOut[2]
+HEX2_D[1] << decoder:decod2.decoderOut[1]
+HEX2_D[0] << decoder:decod2.decoderOut[0]
+HEX1_D[6] << decoder:decod1.decoderOut[6]
+HEX1_D[5] << decoder:decod1.decoderOut[5]
+HEX1_D[4] << decoder:decod1.decoderOut[4]
+HEX1_D[3] << decoder:decod1.decoderOut[3]
+HEX1_D[2] << decoder:decod1.decoderOut[2]
+HEX1_D[1] << decoder:decod1.decoderOut[1]
+HEX1_D[0] << decoder:decod1.decoderOut[0]
+HEX0_D[6] << decoder:decod0.decoderOut[6]
+HEX0_D[5] << decoder:decod0.decoderOut[5]
+HEX0_D[4] << decoder:decod0.decoderOut[4]
+HEX0_D[3] << decoder:decod0.decoderOut[3]
+HEX0_D[2] << decoder:decod0.decoderOut[2]
+HEX0_D[1] << decoder:decod0.decoderOut[1]
+HEX0_D[0] << decoder:decod0.decoderOut[0]
 
 
 |main|latchRS:lat
@@ -42,7 +42,7 @@ Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|freqDivider:freqDiv
-clkIN => freqOut~reg0.CLK
+clkIN => tmp.CLK
 clkIN => i[0].CLK
 clkIN => i[1].CLK
 clkIN => i[2].CLK
@@ -75,71 +75,71 @@ clkIN => i[28].CLK
 clkIN => i[29].CLK
 clkIN => i[30].CLK
 clkIN => i[31].CLK
-freqOut <= freqOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+freqOut <= tmp.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|counter:ctr0
-CLK => Q[3]~reg0.CLK
-CLK => Q[2]~reg0.CLK
-CLK => Q[1]~reg0.CLK
-CLK => Q[0]~reg0.CLK
-R => Q[3]~reg0.ACLR
-R => Q[2]~reg0.ACLR
-R => Q[1]~reg0.ACLR
-R => Q[0]~reg0.ACLR
+CLK => temp[3].CLK
+CLK => temp[2].CLK
+CLK => temp[1].CLK
+CLK => temp[0].CLK
+R => temp[3].ACLR
+R => temp[2].ACLR
+R => temp[1].ACLR
+R => temp[0].ACLR
 Tclk <= Tclk.DB_MAX_OUTPUT_PORT_TYPE
-Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= temp[3].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= temp[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= temp[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[0] <= temp[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|counter:ctr1
-CLK => Q[3]~reg0.CLK
-CLK => Q[2]~reg0.CLK
-CLK => Q[1]~reg0.CLK
-CLK => Q[0]~reg0.CLK
-R => Q[3]~reg0.ACLR
-R => Q[2]~reg0.ACLR
-R => Q[1]~reg0.ACLR
-R => Q[0]~reg0.ACLR
+CLK => temp[3].CLK
+CLK => temp[2].CLK
+CLK => temp[1].CLK
+CLK => temp[0].CLK
+R => temp[3].ACLR
+R => temp[2].ACLR
+R => temp[1].ACLR
+R => temp[0].ACLR
 Tclk <= Tclk.DB_MAX_OUTPUT_PORT_TYPE
-Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= temp[3].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= temp[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= temp[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[0] <= temp[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|counter:ctr2
-CLK => Q[3]~reg0.CLK
-CLK => Q[2]~reg0.CLK
-CLK => Q[1]~reg0.CLK
-CLK => Q[0]~reg0.CLK
-R => Q[3]~reg0.ACLR
-R => Q[2]~reg0.ACLR
-R => Q[1]~reg0.ACLR
-R => Q[0]~reg0.ACLR
+CLK => temp[3].CLK
+CLK => temp[2].CLK
+CLK => temp[1].CLK
+CLK => temp[0].CLK
+R => temp[3].ACLR
+R => temp[2].ACLR
+R => temp[1].ACLR
+R => temp[0].ACLR
 Tclk <= Tclk.DB_MAX_OUTPUT_PORT_TYPE
-Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= temp[3].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= temp[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= temp[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[0] <= temp[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|counter:ctr3
-CLK => Q[3]~reg0.CLK
-CLK => Q[2]~reg0.CLK
-CLK => Q[1]~reg0.CLK
-CLK => Q[0]~reg0.CLK
-R => Q[3]~reg0.ACLR
-R => Q[2]~reg0.ACLR
-R => Q[1]~reg0.ACLR
-R => Q[0]~reg0.ACLR
+CLK => temp[3].CLK
+CLK => temp[2].CLK
+CLK => temp[1].CLK
+CLK => temp[0].CLK
+R => temp[3].ACLR
+R => temp[2].ACLR
+R => temp[1].ACLR
+R => temp[0].ACLR
 Tclk <= Tclk.DB_MAX_OUTPUT_PORT_TYPE
-Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= temp[3].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= temp[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= temp[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[0] <= temp[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|decoder:decod0

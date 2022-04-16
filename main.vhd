@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity main is
     port(
-        Button0, Button1, Button2, Clock_50 : in std_logic;
+        Button0, Button1, Button2, Clock_50 : in std_logic; -- PIN_H2, PIN_G3, PIN_F1, PIN_G21
         HEX3_D, HEX2_D, HEX1_D, HEX0_D : out std_logic_vector(0 to 6)
     );
 end main;
@@ -20,8 +20,8 @@ end component;
 
 component freqDivider is -- divisor de frequência 1/50 000 000
     port(
-    clkIN : in std_logic; -- clkIN = PIN_G21
-    freqOut : buffer std_logic
+        clkIN : in std_logic; -- clkIN = PIN_G21
+        freqOut : out std_logic
     );
 end component;
 
@@ -29,7 +29,7 @@ component counter is  -- contador bcd de 4 bits
     port(
         CLK, R : in std_logic;
         Tclk : out std_logic;
-        Q : buffer std_logic_vector(0 to 3)
+        Q : out std_logic_vector(0 to 3)
     );
 end component;
 

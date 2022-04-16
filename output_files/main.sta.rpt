@@ -1,5 +1,5 @@
 Timing Analyzer report for main
-Sat Apr 16 14:01:48 2022
+Sat Apr 16 17:20:39 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -117,30 +117,30 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clocks                                                                                                                                                                                                                   ;
-+-----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------+
-; Clock Name                  ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                         ;
-+-----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------+
-; Clock_50                    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Clock_50 }                    ;
-; counter:ctr0|Q[0]           ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { counter:ctr0|Q[0] }           ;
-; counter:ctr1|Q[0]           ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { counter:ctr1|Q[0] }           ;
-; counter:ctr2|Q[0]           ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { counter:ctr2|Q[0] }           ;
-; freqDivider:freqDiv|freqOut ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { freqDivider:freqDiv|freqOut } ;
-+-----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                           ;
++-------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------+
+; Clock Name              ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                     ;
++-------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------+
+; Clock_50                ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Clock_50 }                ;
+; counter:ctr0|temp[0]    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { counter:ctr0|temp[0] }    ;
+; counter:ctr1|temp[0]    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { counter:ctr1|temp[0] }    ;
+; counter:ctr2|temp[0]    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { counter:ctr2|temp[0] }    ;
+; freqDivider:freqDiv|tmp ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { freqDivider:freqDiv|tmp } ;
++-------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------+
 
 
-+-------------------------------------------------------------------+
-; Slow 1100mV 85C Model Fmax Summary                                ;
-+------------+-----------------+-----------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                  ; Note ;
-+------------+-----------------+-----------------------------+------+
-; 150.13 MHz ; 150.13 MHz      ; Clock_50                    ;      ;
-; 230.47 MHz ; 230.47 MHz      ; freqDivider:freqDiv|freqOut ;      ;
-; 231.91 MHz ; 231.91 MHz      ; counter:ctr1|Q[0]           ;      ;
-; 236.8 MHz  ; 236.8 MHz       ; counter:ctr0|Q[0]           ;      ;
-; 338.64 MHz ; 338.64 MHz      ; counter:ctr2|Q[0]           ;      ;
-+------------+-----------------+-----------------------------+------+
++---------------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                            ;
++------------+-----------------+-------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name              ; Note ;
++------------+-----------------+-------------------------+------+
+; 150.13 MHz ; 150.13 MHz      ; Clock_50                ;      ;
+; 230.47 MHz ; 230.47 MHz      ; freqDivider:freqDiv|tmp ;      ;
+; 231.91 MHz ; 231.91 MHz      ; counter:ctr1|temp[0]    ;      ;
+; 236.8 MHz  ; 236.8 MHz       ; counter:ctr0|temp[0]    ;      ;
+; 338.64 MHz ; 338.64 MHz      ; counter:ctr2|temp[0]    ;      ;
++------------+-----------------+-------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -150,30 +150,30 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 HTML report is unavailable in plain text report export.
 
 
-+------------------------------------------------------+
-; Slow 1100mV 85C Model Setup Summary                  ;
-+-----------------------------+--------+---------------+
-; Clock                       ; Slack  ; End Point TNS ;
-+-----------------------------+--------+---------------+
-; Clock_50                    ; -5.661 ; -167.049      ;
-; freqDivider:freqDiv|freqOut ; -3.339 ; -9.367        ;
-; counter:ctr1|Q[0]           ; -3.312 ; -9.791        ;
-; counter:ctr0|Q[0]           ; -3.223 ; -9.729        ;
-; counter:ctr2|Q[0]           ; -1.953 ; -7.261        ;
-+-----------------------------+--------+---------------+
++--------------------------------------------------+
+; Slow 1100mV 85C Model Setup Summary              ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; Clock_50                ; -5.661 ; -167.049      ;
+; freqDivider:freqDiv|tmp ; -3.339 ; -9.367        ;
+; counter:ctr1|temp[0]    ; -3.312 ; -9.791        ;
+; counter:ctr0|temp[0]    ; -3.223 ; -9.729        ;
+; counter:ctr2|temp[0]    ; -1.953 ; -7.261        ;
++-------------------------+--------+---------------+
 
 
-+-----------------------------------------------------+
-; Slow 1100mV 85C Model Hold Summary                  ;
-+-----------------------------+-------+---------------+
-; Clock                       ; Slack ; End Point TNS ;
-+-----------------------------+-------+---------------+
-; Clock_50                    ; 0.512 ; 0.000         ;
-; counter:ctr1|Q[0]           ; 0.937 ; 0.000         ;
-; freqDivider:freqDiv|freqOut ; 1.033 ; 0.000         ;
-; counter:ctr2|Q[0]           ; 1.158 ; 0.000         ;
-; counter:ctr0|Q[0]           ; 1.217 ; 0.000         ;
-+-----------------------------+-------+---------------+
++-------------------------------------------------+
+; Slow 1100mV 85C Model Hold Summary              ;
++-------------------------+-------+---------------+
+; Clock                   ; Slack ; End Point TNS ;
++-------------------------+-------+---------------+
+; Clock_50                ; 0.512 ; 0.000         ;
+; counter:ctr1|temp[0]    ; 0.937 ; 0.000         ;
+; freqDivider:freqDiv|tmp ; 1.033 ; 0.000         ;
+; counter:ctr2|temp[0]    ; 1.158 ; 0.000         ;
+; counter:ctr0|temp[0]    ; 1.217 ; 0.000         ;
++-------------------------+-------+---------------+
 
 
 ------------------------------------------
@@ -188,17 +188,17 @@ No paths to report.
 No paths to report.
 
 
-+------------------------------------------------------+
-; Slow 1100mV 85C Model Minimum Pulse Width Summary    ;
-+-----------------------------+--------+---------------+
-; Clock                       ; Slack  ; End Point TNS ;
-+-----------------------------+--------+---------------+
-; Clock_50                    ; -0.724 ; -58.696       ;
-; counter:ctr0|Q[0]           ; -0.724 ; -4.540        ;
-; counter:ctr2|Q[0]           ; -0.724 ; -4.492        ;
-; counter:ctr1|Q[0]           ; -0.724 ; -4.454        ;
-; freqDivider:freqDiv|freqOut ; -0.724 ; -4.434        ;
-+-----------------------------+--------+---------------+
++---------------------------------------------------+
+; Slow 1100mV 85C Model Minimum Pulse Width Summary ;
++-------------------------+--------+----------------+
+; Clock                   ; Slack  ; End Point TNS  ;
++-------------------------+--------+----------------+
+; Clock_50                ; -0.724 ; -58.696        ;
+; counter:ctr0|temp[0]    ; -0.724 ; -4.540         ;
+; counter:ctr2|temp[0]    ; -0.724 ; -4.492         ;
+; counter:ctr1|temp[0]    ; -0.724 ; -4.454         ;
+; freqDivider:freqDiv|tmp ; -0.724 ; -4.434         ;
++-------------------------+--------+----------------+
 
 
 -----------------------------------------------
@@ -207,44 +207,44 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+-------------------------------------------------------------------+
-; Slow 1100mV 0C Model Fmax Summary                                 ;
-+------------+-----------------+-----------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                  ; Note ;
-+------------+-----------------+-----------------------------+------+
-; 149.84 MHz ; 149.84 MHz      ; Clock_50                    ;      ;
-; 230.63 MHz ; 230.63 MHz      ; freqDivider:freqDiv|freqOut ;      ;
-; 234.96 MHz ; 234.96 MHz      ; counter:ctr1|Q[0]           ;      ;
-; 235.46 MHz ; 235.46 MHz      ; counter:ctr0|Q[0]           ;      ;
-; 332.01 MHz ; 332.01 MHz      ; counter:ctr2|Q[0]           ;      ;
-+------------+-----------------+-----------------------------+------+
++---------------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                             ;
++------------+-----------------+-------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name              ; Note ;
++------------+-----------------+-------------------------+------+
+; 149.84 MHz ; 149.84 MHz      ; Clock_50                ;      ;
+; 230.63 MHz ; 230.63 MHz      ; freqDivider:freqDiv|tmp ;      ;
+; 234.96 MHz ; 234.96 MHz      ; counter:ctr1|temp[0]    ;      ;
+; 235.46 MHz ; 235.46 MHz      ; counter:ctr0|temp[0]    ;      ;
+; 332.01 MHz ; 332.01 MHz      ; counter:ctr2|temp[0]    ;      ;
++------------+-----------------+-------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+------------------------------------------------------+
-; Slow 1100mV 0C Model Setup Summary                   ;
-+-----------------------------+--------+---------------+
-; Clock                       ; Slack  ; End Point TNS ;
-+-----------------------------+--------+---------------+
-; Clock_50                    ; -5.674 ; -169.212      ;
-; freqDivider:freqDiv|freqOut ; -3.336 ; -9.398        ;
-; counter:ctr1|Q[0]           ; -3.256 ; -9.737        ;
-; counter:ctr0|Q[0]           ; -3.247 ; -9.794        ;
-; counter:ctr2|Q[0]           ; -2.012 ; -7.355        ;
-+-----------------------------+--------+---------------+
++--------------------------------------------------+
+; Slow 1100mV 0C Model Setup Summary               ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; Clock_50                ; -5.674 ; -169.212      ;
+; freqDivider:freqDiv|tmp ; -3.336 ; -9.398        ;
+; counter:ctr1|temp[0]    ; -3.256 ; -9.737        ;
+; counter:ctr0|temp[0]    ; -3.247 ; -9.794        ;
+; counter:ctr2|temp[0]    ; -2.012 ; -7.355        ;
++-------------------------+--------+---------------+
 
 
-+-----------------------------------------------------+
-; Slow 1100mV 0C Model Hold Summary                   ;
-+-----------------------------+-------+---------------+
-; Clock                       ; Slack ; End Point TNS ;
-+-----------------------------+-------+---------------+
-; Clock_50                    ; 0.112 ; 0.000         ;
-; counter:ctr1|Q[0]           ; 0.887 ; 0.000         ;
-; freqDivider:freqDiv|freqOut ; 0.972 ; 0.000         ;
-; counter:ctr2|Q[0]           ; 1.118 ; 0.000         ;
-; counter:ctr0|Q[0]           ; 1.155 ; 0.000         ;
-+-----------------------------+-------+---------------+
++-------------------------------------------------+
+; Slow 1100mV 0C Model Hold Summary               ;
++-------------------------+-------+---------------+
+; Clock                   ; Slack ; End Point TNS ;
++-------------------------+-------+---------------+
+; Clock_50                ; 0.112 ; 0.000         ;
+; counter:ctr1|temp[0]    ; 0.887 ; 0.000         ;
+; freqDivider:freqDiv|tmp ; 0.972 ; 0.000         ;
+; counter:ctr2|temp[0]    ; 1.118 ; 0.000         ;
+; counter:ctr0|temp[0]    ; 1.155 ; 0.000         ;
++-------------------------+-------+---------------+
 
 
 -----------------------------------------
@@ -259,17 +259,17 @@ No paths to report.
 No paths to report.
 
 
-+------------------------------------------------------+
-; Slow 1100mV 0C Model Minimum Pulse Width Summary     ;
-+-----------------------------+--------+---------------+
-; Clock                       ; Slack  ; End Point TNS ;
-+-----------------------------+--------+---------------+
-; Clock_50                    ; -0.724 ; -58.901       ;
-; counter:ctr2|Q[0]           ; -0.724 ; -4.532        ;
-; counter:ctr0|Q[0]           ; -0.724 ; -4.528        ;
-; counter:ctr1|Q[0]           ; -0.724 ; -4.464        ;
-; freqDivider:freqDiv|freqOut ; -0.724 ; -4.414        ;
-+-----------------------------+--------+---------------+
++--------------------------------------------------+
+; Slow 1100mV 0C Model Minimum Pulse Width Summary ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; Clock_50                ; -0.724 ; -58.901       ;
+; counter:ctr2|temp[0]    ; -0.724 ; -4.532        ;
+; counter:ctr0|temp[0]    ; -0.724 ; -4.528        ;
+; counter:ctr1|temp[0]    ; -0.724 ; -4.464        ;
+; freqDivider:freqDiv|tmp ; -0.724 ; -4.414        ;
++-------------------------+--------+---------------+
 
 
 ----------------------------------------------
@@ -278,30 +278,30 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+------------------------------------------------------+
-; Fast 1100mV 85C Model Setup Summary                  ;
-+-----------------------------+--------+---------------+
-; Clock                       ; Slack  ; End Point TNS ;
-+-----------------------------+--------+---------------+
-; Clock_50                    ; -2.264 ; -42.792       ;
-; freqDivider:freqDiv|freqOut ; -1.604 ; -3.516        ;
-; counter:ctr0|Q[0]           ; -1.380 ; -3.502        ;
-; counter:ctr1|Q[0]           ; -1.269 ; -3.321        ;
-; counter:ctr2|Q[0]           ; -0.470 ; -1.719        ;
-+-----------------------------+--------+---------------+
++--------------------------------------------------+
+; Fast 1100mV 85C Model Setup Summary              ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; Clock_50                ; -2.264 ; -42.792       ;
+; freqDivider:freqDiv|tmp ; -1.604 ; -3.516        ;
+; counter:ctr0|temp[0]    ; -1.380 ; -3.502        ;
+; counter:ctr1|temp[0]    ; -1.269 ; -3.321        ;
+; counter:ctr2|temp[0]    ; -0.470 ; -1.719        ;
++-------------------------+--------+---------------+
 
 
-+-----------------------------------------------------+
-; Fast 1100mV 85C Model Hold Summary                  ;
-+-----------------------------+-------+---------------+
-; Clock                       ; Slack ; End Point TNS ;
-+-----------------------------+-------+---------------+
-; Clock_50                    ; 0.204 ; 0.000         ;
-; counter:ctr1|Q[0]           ; 0.344 ; 0.000         ;
-; freqDivider:freqDiv|freqOut ; 0.388 ; 0.000         ;
-; counter:ctr2|Q[0]           ; 0.417 ; 0.000         ;
-; counter:ctr0|Q[0]           ; 0.450 ; 0.000         ;
-+-----------------------------+-------+---------------+
++-------------------------------------------------+
+; Fast 1100mV 85C Model Hold Summary              ;
++-------------------------+-------+---------------+
+; Clock                   ; Slack ; End Point TNS ;
++-------------------------+-------+---------------+
+; Clock_50                ; 0.204 ; 0.000         ;
+; counter:ctr1|temp[0]    ; 0.344 ; 0.000         ;
+; freqDivider:freqDiv|tmp ; 0.388 ; 0.000         ;
+; counter:ctr2|temp[0]    ; 0.417 ; 0.000         ;
+; counter:ctr0|temp[0]    ; 0.450 ; 0.000         ;
++-------------------------+-------+---------------+
 
 
 ------------------------------------------
@@ -316,17 +316,17 @@ No paths to report.
 No paths to report.
 
 
-+------------------------------------------------------+
-; Fast 1100mV 85C Model Minimum Pulse Width Summary    ;
-+-----------------------------+--------+---------------+
-; Clock                       ; Slack  ; End Point TNS ;
-+-----------------------------+--------+---------------+
-; Clock_50                    ; -0.087 ; -4.516        ;
-; freqDivider:freqDiv|freqOut ; 0.110  ; 0.000         ;
-; counter:ctr0|Q[0]           ; 0.114  ; 0.000         ;
-; counter:ctr1|Q[0]           ; 0.138  ; 0.000         ;
-; counter:ctr2|Q[0]           ; 0.160  ; 0.000         ;
-+-----------------------------+--------+---------------+
++---------------------------------------------------+
+; Fast 1100mV 85C Model Minimum Pulse Width Summary ;
++-------------------------+--------+----------------+
+; Clock                   ; Slack  ; End Point TNS  ;
++-------------------------+--------+----------------+
+; Clock_50                ; -0.087 ; -4.516         ;
+; freqDivider:freqDiv|tmp ; 0.110  ; 0.000          ;
+; counter:ctr0|temp[0]    ; 0.114  ; 0.000          ;
+; counter:ctr1|temp[0]    ; 0.138  ; 0.000          ;
+; counter:ctr2|temp[0]    ; 0.160  ; 0.000          ;
++-------------------------+--------+----------------+
 
 
 -----------------------------------------------
@@ -335,30 +335,30 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+------------------------------------------------------+
-; Fast 1100mV 0C Model Setup Summary                   ;
-+-----------------------------+--------+---------------+
-; Clock                       ; Slack  ; End Point TNS ;
-+-----------------------------+--------+---------------+
-; Clock_50                    ; -1.926 ; -34.496       ;
-; freqDivider:freqDiv|freqOut ; -1.424 ; -3.012        ;
-; counter:ctr0|Q[0]           ; -1.261 ; -3.168        ;
-; counter:ctr1|Q[0]           ; -1.164 ; -2.952        ;
-; counter:ctr2|Q[0]           ; -0.392 ; -1.434        ;
-+-----------------------------+--------+---------------+
++--------------------------------------------------+
+; Fast 1100mV 0C Model Setup Summary               ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; Clock_50                ; -1.926 ; -34.496       ;
+; freqDivider:freqDiv|tmp ; -1.424 ; -3.012        ;
+; counter:ctr0|temp[0]    ; -1.261 ; -3.168        ;
+; counter:ctr1|temp[0]    ; -1.164 ; -2.952        ;
+; counter:ctr2|temp[0]    ; -0.392 ; -1.434        ;
++-------------------------+--------+---------------+
 
 
-+-----------------------------------------------------+
-; Fast 1100mV 0C Model Hold Summary                   ;
-+-----------------------------+-------+---------------+
-; Clock                       ; Slack ; End Point TNS ;
-+-----------------------------+-------+---------------+
-; Clock_50                    ; 0.135 ; 0.000         ;
-; counter:ctr1|Q[0]           ; 0.300 ; 0.000         ;
-; freqDivider:freqDiv|freqOut ; 0.341 ; 0.000         ;
-; counter:ctr2|Q[0]           ; 0.368 ; 0.000         ;
-; counter:ctr0|Q[0]           ; 0.386 ; 0.000         ;
-+-----------------------------+-------+---------------+
++-------------------------------------------------+
+; Fast 1100mV 0C Model Hold Summary               ;
++-------------------------+-------+---------------+
+; Clock                   ; Slack ; End Point TNS ;
++-------------------------+-------+---------------+
+; Clock_50                ; 0.135 ; 0.000         ;
+; counter:ctr1|temp[0]    ; 0.300 ; 0.000         ;
+; freqDivider:freqDiv|tmp ; 0.341 ; 0.000         ;
+; counter:ctr2|temp[0]    ; 0.368 ; 0.000         ;
+; counter:ctr0|temp[0]    ; 0.386 ; 0.000         ;
++-------------------------+-------+---------------+
 
 
 -----------------------------------------
@@ -373,17 +373,17 @@ No paths to report.
 No paths to report.
 
 
-+------------------------------------------------------+
-; Fast 1100mV 0C Model Minimum Pulse Width Summary     ;
-+-----------------------------+--------+---------------+
-; Clock                       ; Slack  ; End Point TNS ;
-+-----------------------------+--------+---------------+
-; Clock_50                    ; -0.085 ; -4.455        ;
-; counter:ctr0|Q[0]           ; 0.110  ; 0.000         ;
-; freqDivider:freqDiv|freqOut ; 0.120  ; 0.000         ;
-; counter:ctr1|Q[0]           ; 0.155  ; 0.000         ;
-; counter:ctr2|Q[0]           ; 0.158  ; 0.000         ;
-+-----------------------------+--------+---------------+
++--------------------------------------------------+
+; Fast 1100mV 0C Model Minimum Pulse Width Summary ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; Clock_50                ; -0.085 ; -4.455        ;
+; counter:ctr0|temp[0]    ; 0.110  ; 0.000         ;
+; freqDivider:freqDiv|tmp ; 0.120  ; 0.000         ;
+; counter:ctr1|temp[0]    ; 0.155  ; 0.000         ;
+; counter:ctr2|temp[0]    ; 0.158  ; 0.000         ;
++-------------------------+--------+---------------+
 
 
 ----------------------------------------------
@@ -392,24 +392,24 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+--------------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                        ;
-+------------------------------+----------+-------+----------+---------+---------------------+
-; Clock                        ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack             ; -5.674   ; 0.112 ; N/A      ; N/A     ; -0.724              ;
-;  Clock_50                    ; -5.674   ; 0.112 ; N/A      ; N/A     ; -0.724              ;
-;  counter:ctr0|Q[0]           ; -3.247   ; 0.386 ; N/A      ; N/A     ; -0.724              ;
-;  counter:ctr1|Q[0]           ; -3.312   ; 0.300 ; N/A      ; N/A     ; -0.724              ;
-;  counter:ctr2|Q[0]           ; -2.012   ; 0.368 ; N/A      ; N/A     ; -0.724              ;
-;  freqDivider:freqDiv|freqOut ; -3.339   ; 0.341 ; N/A      ; N/A     ; -0.724              ;
-; Design-wide TNS              ; -205.496 ; 0.0   ; 0.0      ; 0.0     ; -76.839             ;
-;  Clock_50                    ; -169.212 ; 0.000 ; N/A      ; N/A     ; -58.901             ;
-;  counter:ctr0|Q[0]           ; -9.794   ; 0.000 ; N/A      ; N/A     ; -4.540              ;
-;  counter:ctr1|Q[0]           ; -9.791   ; 0.000 ; N/A      ; N/A     ; -4.464              ;
-;  counter:ctr2|Q[0]           ; -7.355   ; 0.000 ; N/A      ; N/A     ; -4.532              ;
-;  freqDivider:freqDiv|freqOut ; -9.398   ; 0.000 ; N/A      ; N/A     ; -4.434              ;
-+------------------------------+----------+-------+----------+---------+---------------------+
++----------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                    ;
++--------------------------+----------+-------+----------+---------+---------------------+
+; Clock                    ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++--------------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack         ; -5.674   ; 0.112 ; N/A      ; N/A     ; -0.724              ;
+;  Clock_50                ; -5.674   ; 0.112 ; N/A      ; N/A     ; -0.724              ;
+;  counter:ctr0|temp[0]    ; -3.247   ; 0.386 ; N/A      ; N/A     ; -0.724              ;
+;  counter:ctr1|temp[0]    ; -3.312   ; 0.300 ; N/A      ; N/A     ; -0.724              ;
+;  counter:ctr2|temp[0]    ; -2.012   ; 0.368 ; N/A      ; N/A     ; -0.724              ;
+;  freqDivider:freqDiv|tmp ; -3.339   ; 0.341 ; N/A      ; N/A     ; -0.724              ;
+; Design-wide TNS          ; -205.496 ; 0.0   ; 0.0      ; 0.0     ; -76.839             ;
+;  Clock_50                ; -169.212 ; 0.000 ; N/A      ; N/A     ; -58.901             ;
+;  counter:ctr0|temp[0]    ; -9.794   ; 0.000 ; N/A      ; N/A     ; -4.540              ;
+;  counter:ctr1|temp[0]    ; -9.791   ; 0.000 ; N/A      ; N/A     ; -4.464              ;
+;  counter:ctr2|temp[0]    ; -7.355   ; 0.000 ; N/A      ; N/A     ; -4.532              ;
+;  freqDivider:freqDiv|tmp ; -9.398   ; 0.000 ; N/A      ; N/A     ; -4.434              ;
++--------------------------+----------+-------+----------+---------+---------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -604,39 +604,39 @@ No synchronizer chains to report.
 +-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Setup Transfers                                                                                       ;
-+-----------------------------+-----------------------------+----------+----------+----------+----------+
-; From Clock                  ; To Clock                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+-----------------------------+-----------------------------+----------+----------+----------+----------+
-; Clock_50                    ; Clock_50                    ; 2473     ; 0        ; 0        ; 0        ;
-; freqDivider:freqDiv|freqOut ; Clock_50                    ; 1        ; 1        ; 0        ; 0        ;
-; counter:ctr0|Q[0]           ; counter:ctr0|Q[0]           ; 0        ; 0        ; 0        ; 10       ;
-; counter:ctr1|Q[0]           ; counter:ctr0|Q[0]           ; 0        ; 0        ; 2        ; 2        ;
-; counter:ctr1|Q[0]           ; counter:ctr1|Q[0]           ; 0        ; 0        ; 0        ; 10       ;
-; counter:ctr2|Q[0]           ; counter:ctr1|Q[0]           ; 0        ; 0        ; 2        ; 2        ;
-; counter:ctr2|Q[0]           ; counter:ctr2|Q[0]           ; 0        ; 0        ; 0        ; 12       ;
-; counter:ctr0|Q[0]           ; freqDivider:freqDiv|freqOut ; 2        ; 2        ; 0        ; 0        ;
-; freqDivider:freqDiv|freqOut ; freqDivider:freqDiv|freqOut ; 10       ; 0        ; 0        ; 0        ;
-+-----------------------------+-----------------------------+----------+----------+----------+----------+
++-----------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                               ;
++-------------------------+-------------------------+----------+----------+----------+----------+
+; From Clock              ; To Clock                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------+-------------------------+----------+----------+----------+----------+
+; Clock_50                ; Clock_50                ; 2473     ; 0        ; 0        ; 0        ;
+; freqDivider:freqDiv|tmp ; Clock_50                ; 1        ; 1        ; 0        ; 0        ;
+; counter:ctr0|temp[0]    ; counter:ctr0|temp[0]    ; 0        ; 0        ; 0        ; 10       ;
+; counter:ctr1|temp[0]    ; counter:ctr0|temp[0]    ; 0        ; 0        ; 2        ; 2        ;
+; counter:ctr1|temp[0]    ; counter:ctr1|temp[0]    ; 0        ; 0        ; 0        ; 10       ;
+; counter:ctr2|temp[0]    ; counter:ctr1|temp[0]    ; 0        ; 0        ; 2        ; 2        ;
+; counter:ctr2|temp[0]    ; counter:ctr2|temp[0]    ; 0        ; 0        ; 0        ; 12       ;
+; counter:ctr0|temp[0]    ; freqDivider:freqDiv|tmp ; 2        ; 2        ; 0        ; 0        ;
+; freqDivider:freqDiv|tmp ; freqDivider:freqDiv|tmp ; 10       ; 0        ; 0        ; 0        ;
++-------------------------+-------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Hold Transfers                                                                                        ;
-+-----------------------------+-----------------------------+----------+----------+----------+----------+
-; From Clock                  ; To Clock                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+-----------------------------+-----------------------------+----------+----------+----------+----------+
-; Clock_50                    ; Clock_50                    ; 2473     ; 0        ; 0        ; 0        ;
-; freqDivider:freqDiv|freqOut ; Clock_50                    ; 1        ; 1        ; 0        ; 0        ;
-; counter:ctr0|Q[0]           ; counter:ctr0|Q[0]           ; 0        ; 0        ; 0        ; 10       ;
-; counter:ctr1|Q[0]           ; counter:ctr0|Q[0]           ; 0        ; 0        ; 2        ; 2        ;
-; counter:ctr1|Q[0]           ; counter:ctr1|Q[0]           ; 0        ; 0        ; 0        ; 10       ;
-; counter:ctr2|Q[0]           ; counter:ctr1|Q[0]           ; 0        ; 0        ; 2        ; 2        ;
-; counter:ctr2|Q[0]           ; counter:ctr2|Q[0]           ; 0        ; 0        ; 0        ; 12       ;
-; counter:ctr0|Q[0]           ; freqDivider:freqDiv|freqOut ; 2        ; 2        ; 0        ; 0        ;
-; freqDivider:freqDiv|freqOut ; freqDivider:freqDiv|freqOut ; 10       ; 0        ; 0        ; 0        ;
-+-----------------------------+-----------------------------+----------+----------+----------+----------+
++-----------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                ;
++-------------------------+-------------------------+----------+----------+----------+----------+
+; From Clock              ; To Clock                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------+-------------------------+----------+----------+----------+----------+
+; Clock_50                ; Clock_50                ; 2473     ; 0        ; 0        ; 0        ;
+; freqDivider:freqDiv|tmp ; Clock_50                ; 1        ; 1        ; 0        ; 0        ;
+; counter:ctr0|temp[0]    ; counter:ctr0|temp[0]    ; 0        ; 0        ; 0        ; 10       ;
+; counter:ctr1|temp[0]    ; counter:ctr0|temp[0]    ; 0        ; 0        ; 2        ; 2        ;
+; counter:ctr1|temp[0]    ; counter:ctr1|temp[0]    ; 0        ; 0        ; 0        ; 10       ;
+; counter:ctr2|temp[0]    ; counter:ctr1|temp[0]    ; 0        ; 0        ; 2        ; 2        ;
+; counter:ctr2|temp[0]    ; counter:ctr2|temp[0]    ; 0        ; 0        ; 0        ; 12       ;
+; counter:ctr0|temp[0]    ; freqDivider:freqDiv|tmp ; 2        ; 2        ; 0        ; 0        ;
+; freqDivider:freqDiv|tmp ; freqDivider:freqDiv|tmp ; 10       ; 0        ; 0        ; 0        ;
++-------------------------+-------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
@@ -666,17 +666,17 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 
 
-+--------------------------------------------------------------------------------+
-; Clock Status Summary                                                           ;
-+-----------------------------+-----------------------------+------+-------------+
-; Target                      ; Clock                       ; Type ; Status      ;
-+-----------------------------+-----------------------------+------+-------------+
-; Clock_50                    ; Clock_50                    ; Base ; Constrained ;
-; counter:ctr0|Q[0]           ; counter:ctr0|Q[0]           ; Base ; Constrained ;
-; counter:ctr1|Q[0]           ; counter:ctr1|Q[0]           ; Base ; Constrained ;
-; counter:ctr2|Q[0]           ; counter:ctr2|Q[0]           ; Base ; Constrained ;
-; freqDivider:freqDiv|freqOut ; freqDivider:freqDiv|freqOut ; Base ; Constrained ;
-+-----------------------------+-----------------------------+------+-------------+
++------------------------------------------------------------------------+
+; Clock Status Summary                                                   ;
++-------------------------+-------------------------+------+-------------+
+; Target                  ; Clock                   ; Type ; Status      ;
++-------------------------+-------------------------+------+-------------+
+; Clock_50                ; Clock_50                ; Base ; Constrained ;
+; counter:ctr0|temp[0]    ; counter:ctr0|temp[0]    ; Base ; Constrained ;
+; counter:ctr1|temp[0]    ; counter:ctr1|temp[0]    ; Base ; Constrained ;
+; counter:ctr2|temp[0]    ; counter:ctr2|temp[0]    ; Base ; Constrained ;
+; freqDivider:freqDiv|tmp ; freqDivider:freqDiv|tmp ; Base ; Constrained ;
++-------------------------+-------------------------+------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -779,7 +779,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Sat Apr 16 14:01:44 2022
+    Info: Processing started: Sat Apr 16 17:20:36 2022
 Info: Command: quartus_sta stopwatch -c main
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -791,10 +791,10 @@ Critical Warning (332012): Synopsys Design Constraints File file not found: 'mai
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name Clock_50 Clock_50
-    Info (332105): create_clock -period 1.000 -name counter:ctr2|Q[0] counter:ctr2|Q[0]
-    Info (332105): create_clock -period 1.000 -name counter:ctr1|Q[0] counter:ctr1|Q[0]
-    Info (332105): create_clock -period 1.000 -name counter:ctr0|Q[0] counter:ctr0|Q[0]
-    Info (332105): create_clock -period 1.000 -name freqDivider:freqDiv|freqOut freqDivider:freqDiv|freqOut
+    Info (332105): create_clock -period 1.000 -name counter:ctr2|temp[0] counter:ctr2|temp[0]
+    Info (332105): create_clock -period 1.000 -name counter:ctr1|temp[0] counter:ctr1|temp[0]
+    Info (332105): create_clock -period 1.000 -name counter:ctr0|temp[0] counter:ctr0|temp[0]
+    Info (332105): create_clock -period 1.000 -name freqDivider:freqDiv|tmp freqDivider:freqDiv|tmp
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
@@ -805,28 +805,28 @@ Info (332146): Worst-case setup slack is -5.661
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -5.661            -167.049 Clock_50 
-    Info (332119):    -3.339              -9.367 freqDivider:freqDiv|freqOut 
-    Info (332119):    -3.312              -9.791 counter:ctr1|Q[0] 
-    Info (332119):    -3.223              -9.729 counter:ctr0|Q[0] 
-    Info (332119):    -1.953              -7.261 counter:ctr2|Q[0] 
+    Info (332119):    -3.339              -9.367 freqDivider:freqDiv|tmp 
+    Info (332119):    -3.312              -9.791 counter:ctr1|temp[0] 
+    Info (332119):    -3.223              -9.729 counter:ctr0|temp[0] 
+    Info (332119):    -1.953              -7.261 counter:ctr2|temp[0] 
 Info (332146): Worst-case hold slack is 0.512
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.512               0.000 Clock_50 
-    Info (332119):     0.937               0.000 counter:ctr1|Q[0] 
-    Info (332119):     1.033               0.000 freqDivider:freqDiv|freqOut 
-    Info (332119):     1.158               0.000 counter:ctr2|Q[0] 
-    Info (332119):     1.217               0.000 counter:ctr0|Q[0] 
+    Info (332119):     0.937               0.000 counter:ctr1|temp[0] 
+    Info (332119):     1.033               0.000 freqDivider:freqDiv|tmp 
+    Info (332119):     1.158               0.000 counter:ctr2|temp[0] 
+    Info (332119):     1.217               0.000 counter:ctr0|temp[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.724
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -0.724             -58.696 Clock_50 
-    Info (332119):    -0.724              -4.540 counter:ctr0|Q[0] 
-    Info (332119):    -0.724              -4.492 counter:ctr2|Q[0] 
-    Info (332119):    -0.724              -4.454 counter:ctr1|Q[0] 
-    Info (332119):    -0.724              -4.434 freqDivider:freqDiv|freqOut 
+    Info (332119):    -0.724              -4.540 counter:ctr0|temp[0] 
+    Info (332119):    -0.724              -4.492 counter:ctr2|temp[0] 
+    Info (332119):    -0.724              -4.454 counter:ctr1|temp[0] 
+    Info (332119):    -0.724              -4.434 freqDivider:freqDiv|tmp 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -837,28 +837,28 @@ Info (332146): Worst-case setup slack is -5.674
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -5.674            -169.212 Clock_50 
-    Info (332119):    -3.336              -9.398 freqDivider:freqDiv|freqOut 
-    Info (332119):    -3.256              -9.737 counter:ctr1|Q[0] 
-    Info (332119):    -3.247              -9.794 counter:ctr0|Q[0] 
-    Info (332119):    -2.012              -7.355 counter:ctr2|Q[0] 
+    Info (332119):    -3.336              -9.398 freqDivider:freqDiv|tmp 
+    Info (332119):    -3.256              -9.737 counter:ctr1|temp[0] 
+    Info (332119):    -3.247              -9.794 counter:ctr0|temp[0] 
+    Info (332119):    -2.012              -7.355 counter:ctr2|temp[0] 
 Info (332146): Worst-case hold slack is 0.112
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.112               0.000 Clock_50 
-    Info (332119):     0.887               0.000 counter:ctr1|Q[0] 
-    Info (332119):     0.972               0.000 freqDivider:freqDiv|freqOut 
-    Info (332119):     1.118               0.000 counter:ctr2|Q[0] 
-    Info (332119):     1.155               0.000 counter:ctr0|Q[0] 
+    Info (332119):     0.887               0.000 counter:ctr1|temp[0] 
+    Info (332119):     0.972               0.000 freqDivider:freqDiv|tmp 
+    Info (332119):     1.118               0.000 counter:ctr2|temp[0] 
+    Info (332119):     1.155               0.000 counter:ctr0|temp[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.724
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -0.724             -58.901 Clock_50 
-    Info (332119):    -0.724              -4.532 counter:ctr2|Q[0] 
-    Info (332119):    -0.724              -4.528 counter:ctr0|Q[0] 
-    Info (332119):    -0.724              -4.464 counter:ctr1|Q[0] 
-    Info (332119):    -0.724              -4.414 freqDivider:freqDiv|freqOut 
+    Info (332119):    -0.724              -4.532 counter:ctr2|temp[0] 
+    Info (332119):    -0.724              -4.528 counter:ctr0|temp[0] 
+    Info (332119):    -0.724              -4.464 counter:ctr1|temp[0] 
+    Info (332119):    -0.724              -4.414 freqDivider:freqDiv|tmp 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -869,28 +869,28 @@ Info (332146): Worst-case setup slack is -2.264
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -2.264             -42.792 Clock_50 
-    Info (332119):    -1.604              -3.516 freqDivider:freqDiv|freqOut 
-    Info (332119):    -1.380              -3.502 counter:ctr0|Q[0] 
-    Info (332119):    -1.269              -3.321 counter:ctr1|Q[0] 
-    Info (332119):    -0.470              -1.719 counter:ctr2|Q[0] 
+    Info (332119):    -1.604              -3.516 freqDivider:freqDiv|tmp 
+    Info (332119):    -1.380              -3.502 counter:ctr0|temp[0] 
+    Info (332119):    -1.269              -3.321 counter:ctr1|temp[0] 
+    Info (332119):    -0.470              -1.719 counter:ctr2|temp[0] 
 Info (332146): Worst-case hold slack is 0.204
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.204               0.000 Clock_50 
-    Info (332119):     0.344               0.000 counter:ctr1|Q[0] 
-    Info (332119):     0.388               0.000 freqDivider:freqDiv|freqOut 
-    Info (332119):     0.417               0.000 counter:ctr2|Q[0] 
-    Info (332119):     0.450               0.000 counter:ctr0|Q[0] 
+    Info (332119):     0.344               0.000 counter:ctr1|temp[0] 
+    Info (332119):     0.388               0.000 freqDivider:freqDiv|tmp 
+    Info (332119):     0.417               0.000 counter:ctr2|temp[0] 
+    Info (332119):     0.450               0.000 counter:ctr0|temp[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.087
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -0.087              -4.516 Clock_50 
-    Info (332119):     0.110               0.000 freqDivider:freqDiv|freqOut 
-    Info (332119):     0.114               0.000 counter:ctr0|Q[0] 
-    Info (332119):     0.138               0.000 counter:ctr1|Q[0] 
-    Info (332119):     0.160               0.000 counter:ctr2|Q[0] 
+    Info (332119):     0.110               0.000 freqDivider:freqDiv|tmp 
+    Info (332119):     0.114               0.000 counter:ctr0|temp[0] 
+    Info (332119):     0.138               0.000 counter:ctr1|temp[0] 
+    Info (332119):     0.160               0.000 counter:ctr2|temp[0] 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
@@ -899,34 +899,34 @@ Info (332146): Worst-case setup slack is -1.926
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -1.926             -34.496 Clock_50 
-    Info (332119):    -1.424              -3.012 freqDivider:freqDiv|freqOut 
-    Info (332119):    -1.261              -3.168 counter:ctr0|Q[0] 
-    Info (332119):    -1.164              -2.952 counter:ctr1|Q[0] 
-    Info (332119):    -0.392              -1.434 counter:ctr2|Q[0] 
+    Info (332119):    -1.424              -3.012 freqDivider:freqDiv|tmp 
+    Info (332119):    -1.261              -3.168 counter:ctr0|temp[0] 
+    Info (332119):    -1.164              -2.952 counter:ctr1|temp[0] 
+    Info (332119):    -0.392              -1.434 counter:ctr2|temp[0] 
 Info (332146): Worst-case hold slack is 0.135
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.135               0.000 Clock_50 
-    Info (332119):     0.300               0.000 counter:ctr1|Q[0] 
-    Info (332119):     0.341               0.000 freqDivider:freqDiv|freqOut 
-    Info (332119):     0.368               0.000 counter:ctr2|Q[0] 
-    Info (332119):     0.386               0.000 counter:ctr0|Q[0] 
+    Info (332119):     0.300               0.000 counter:ctr1|temp[0] 
+    Info (332119):     0.341               0.000 freqDivider:freqDiv|tmp 
+    Info (332119):     0.368               0.000 counter:ctr2|temp[0] 
+    Info (332119):     0.386               0.000 counter:ctr0|temp[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.085
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -0.085              -4.455 Clock_50 
-    Info (332119):     0.110               0.000 counter:ctr0|Q[0] 
-    Info (332119):     0.120               0.000 freqDivider:freqDiv|freqOut 
-    Info (332119):     0.155               0.000 counter:ctr1|Q[0] 
-    Info (332119):     0.158               0.000 counter:ctr2|Q[0] 
+    Info (332119):     0.110               0.000 counter:ctr0|temp[0] 
+    Info (332119):     0.120               0.000 freqDivider:freqDiv|tmp 
+    Info (332119):     0.155               0.000 counter:ctr1|temp[0] 
+    Info (332119):     0.158               0.000 counter:ctr2|temp[0] 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 5300 megabytes
-    Info: Processing ended: Sat Apr 16 14:01:48 2022
-    Info: Elapsed time: 00:00:04
+    Info: Peak virtual memory: 5275 megabytes
+    Info: Processing ended: Sat Apr 16 17:20:39 2022
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:04
 
 
