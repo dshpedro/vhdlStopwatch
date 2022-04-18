@@ -203,7 +203,7 @@ VCCIO7A                      : D15       : power  :                   : 2.5V    
 VCCPD7A8A                    : D16       : power  :                   : 2.5V    : 7A, 8A    :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D17       :        :                   :         : 7A        :                
 VCC_AUX                      : D18       : power  :                   : 2.5V    :           :                
-HEX1_D[1]                    : D19       : output : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D19       :        :                   :         : 7A        :                
 GND                          : D20       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D21       :        :                   :         : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D22       :        :                   :         : 7A        :                
@@ -333,12 +333,12 @@ VCC                          : K13       : power  :                   : 1.1V    
 GND                          : K14       : gnd    :                   :         :           :                
 VCC                          : K15       : power  :                   : 1.1V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K16       :        :                   :         : 7A        :                
-HEX3_D[5]                    : K17       : output : 2.5 V             :         : 5B        : N              
+HEX2_D[6]                    : K17       : output : 2.5 V             :         : 5B        : N              
 VCCIO5B                      : K18       : power  :                   : 2.5V    : 5B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K19       :        :                   :         : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K20       :        :                   :         : 7A        :                
-HEX3_D[2]                    : K21       : output : 2.5 V             :         : 5B        : N              
-HEX2_D[1]                    : K22       : output : 2.5 V             :         : 5B        : N              
+HEX1_D[2]                    : K21       : output : 2.5 V             :         : 5B        : N              
+HEX1_D[4]                    : K22       : output : 2.5 V             :         : 5B        : N              
 GND                          : L1        :        :                   :         : B1L       :                
 GND                          : L2        :        :                   :         : B1L       :                
 GND                          : L3        : gnd    :                   :         :           :                
@@ -355,12 +355,12 @@ GND                          : L13       : gnd    :                   :         
 VCC                          : L14       : power  :                   : 1.1V    :           :                
 GND                          : L15       : gnd    :                   :         :           :                
 VCC                          : L16       : power  :                   : 1.1V    :           :                
-HEX3_D[4]                    : L17       : output : 2.5 V             :         : 5B        : N              
-HEX2_D[0]                    : L18       : output : 2.5 V             :         : 5B        : N              
-HEX3_D[6]                    : L19       : output : 2.5 V             :         : 5B        : N              
+HEX2_D[0]                    : L17       : output : 2.5 V             :         : 5B        : N              
+HEX1_D[1]                    : L18       : output : 2.5 V             :         : 5B        : N              
+HEX1_D[3]                    : L19       : output : 2.5 V             :         : 5B        : N              
 VREFB5BN0                    : L20       : power  :                   :         : 5B        :                
 GND                          : L21       : gnd    :                   :         :           :                
-HEX1_D[5]                    : L22       : output : 2.5 V             :         : 5B        : N              
+HEX2_D[4]                    : L22       : output : 2.5 V             :         : 5B        : N              
 GND                          : M1        : gnd    :                   :         :           :                
 GND                          : M2        : gnd    :                   :         :           :                
 VCCH_GXBL                    : M3        : power  :                   : 2.5V    :           :                
@@ -378,11 +378,11 @@ GND                          : M14       : gnd    :                   :         
 VCC                          : M15       : power  :                   : 1.1V    :           :                
 Clock_50                     : M16       : input  : 2.5 V             :         : 5B        : N              
 VCCPD5B                      : M17       : power  :                   : 2.5V    : 5B        :                
-HEX1_D[3]                    : M18       : output : 2.5 V             :         : 5B        : N              
+HEX3_D[3]                    : M18       : output : 2.5 V             :         : 5B        : N              
 VCCIO5B                      : M19       : power  :                   : 2.5V    : 5B        :                
-HEX2_D[6]                    : M20       : output : 2.5 V             :         : 5B        : N              
-HEX3_D[0]                    : M21       : output : 2.5 V             :         : 5B        : N              
-HEX1_D[0]                    : M22       : output : 2.5 V             :         : 5B        : N              
+HEX1_D[5]                    : M20       : output : 2.5 V             :         : 5B        : N              
+HEX1_D[0]                    : M21       : output : 2.5 V             :         : 5B        : N              
+HEX3_D[6]                    : M22       : output : 2.5 V             :         : 5B        : N              
 GXB_NC                       : N1        :        :                   :         : B0L       :                
 GXB_NC                       : N2        :        :                   :         : B0L       :                
 GND                          : N3        : gnd    :                   :         :           :                
@@ -398,12 +398,12 @@ VCC                          : N12       : power  :                   : 1.1V    
 GND                          : N13       : gnd    :                   :         :           :                
 VCC                          : N14       : power  :                   : 1.1V    :           :                
 GND                          : N15       : gnd    :                   :         :           :                
-HEX0_D[3]                    : N16       : output : 2.5 V             :         : 5B        : N              
+HEX2_D[5]                    : N16       : output : 2.5 V             :         : 5B        : N              
 GND                          : N17       : gnd    :                   :         :           :                
 VCCPD5B                      : N18       : power  :                   : 2.5V    : 5B        :                
-HEX1_D[4]                    : N19       : output : 2.5 V             :         : 5B        : N              
-HEX3_D[1]                    : N20       : output : 2.5 V             :         : 5B        : N              
-HEX2_D[4]                    : N21       : output : 2.5 V             :         : 5B        : N              
+HEX2_D[2]                    : N19       : output : 2.5 V             :         : 5B        : N              
+HEX2_D[3]                    : N20       : output : 2.5 V             :         : 5B        : N              
+HEX2_D[1]                    : N21       : output : 2.5 V             :         : 5B        : N              
 GND                          : N22       : gnd    :                   :         :           :                
 GND                          : P1        : gnd    :                   :         :           :                
 GND                          : P2        : gnd    :                   :         :           :                
@@ -420,13 +420,13 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : P12       :        :                   :      
 VCC                          : P13       : power  :                   : 1.1V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P14       :        :                   :         : 4A        :                
 VCC                          : P15       : power  :                   : 1.1V    :           :                
-HEX1_D[6]                    : P16       : output : 2.5 V             :         : 5A        : N              
-HEX1_D[2]                    : P17       : output : 2.5 V             :         : 5A        : N              
-Button0                      : P18       : input  : 2.5 V             :         : 5A        : N              
-HEX2_D[5]                    : P19       : output : 2.5 V             :         : 5A        : N              
+HEX0_D[3]                    : P16       : output : 2.5 V             :         : 5A        : N              
+HEX0_D[6]                    : P17       : output : 2.5 V             :         : 5A        : N              
+HEX0_D[5]                    : P18       : output : 2.5 V             :         : 5A        : N              
+HEX0_D[2]                    : P19       : output : 2.5 V             :         : 5A        : N              
 VCCIO5A                      : P20       : power  :                   : 2.5V    : 5A        :                
 VCCPD5A                      : P21       : power  :                   : 2.5V    : 5A        :                
-HEX2_D[2]                    : P22       : output : 2.5 V             :         : 5A        : N              
+HEX3_D[0]                    : P22       : output : 2.5 V             :         : 5A        : N              
 GND                          : R1        :        :                   :         : B0L       :                
 GND                          : R2        :        :                   :         : B0L       :                
 GND                          : R3        : gnd    :                   :         :           :                
@@ -441,14 +441,14 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : R11       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : R12       :        :                   :         : 3B        :                
 GND                          : R13       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R14       :        :                   :         : 4A        :                
-HEX0_D[6]                    : R15       : output : 2.5 V             :         : 5A        : N              
-HEX0_D[5]                    : R16       : output : 2.5 V             :         : 5A        : N              
-HEX2_D[3]                    : R17       : output : 2.5 V             :         : 5A        : N              
+Button0                      : R15       : input  : 2.5 V             :         : 5A        : N              
+HEX3_D[5]                    : R16       : output : 2.5 V             :         : 5A        : N              
+HEX3_D[4]                    : R17       : output : 2.5 V             :         : 5A        : N              
 VCCIO5A                      : R18       : power  :                   : 2.5V    : 5A        :                
 VCCPGM                       : R19       : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
 VREFB5AN0                    : R20       : power  :                   :         : 5A        :                
-HEX0_D[1]                    : R21       : output : 2.5 V             :         : 5A        : N              
-HEX0_D[0]                    : R22       : output : 2.5 V             :         : 5A        : N              
+HEX3_D[1]                    : R21       : output : 2.5 V             :         : 5A        : N              
+Button1                      : R22       : input  : 2.5 V             :         : 5A        : N              
 GND                          : T1        : gnd    :                   :         :           :                
 GND                          : T2        : gnd    :                   :         :           :                
 VCCH_GXBL                    : T3        : power  :                   : 2.5V    :           :                
@@ -463,14 +463,14 @@ VCCIO3B                      : T11       : power  :                   : 2.5V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : T12       :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T13       :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T14       :        :                   :         : 4A        :                
-HEX0_D[2]                    : T15       : output : 2.5 V             :         : 5A        : N              
+HEX3_D[2]                    : T15       : output : 2.5 V             :         : 5A        : N              
 GND                          : T16       : gnd    :                   :         :           :                
-Button2                      : T17       : input  : 2.5 V             :         : 5A        : N              
-Button1                      : T18       : input  : 2.5 V             :         : 5A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : T19       :        :                   :         : 5A        :                
-HEX3_D[3]                    : T20       : output : 2.5 V             :         : 5A        : N              
+HEX0_D[0]                    : T17       : output : 2.5 V             :         : 5A        : N              
+HEX0_D[1]                    : T18       : output : 2.5 V             :         : 5A        : N              
+HEX1_D[6]                    : T19       : output : 2.5 V             :         : 5A        : N              
+HEX0_D[4]                    : T20       : output : 2.5 V             :         : 5A        : N              
 GND                          : T21       : gnd    :                   :         :           :                
-HEX0_D[4]                    : T22       : output : 2.5 V             :         : 5A        : N              
+Button2                      : T22       : input  : 2.5 V             :         : 5A        : N              
 GXB_NC                       : U1        :        :                   :         : B0L       :                
 GXB_NC                       : U2        :        :                   :         : B0L       :                
 GND                          : U3        : gnd    :                   :         :           :                

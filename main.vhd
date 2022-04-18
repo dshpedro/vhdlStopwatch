@@ -33,6 +33,14 @@ component counter is  -- contador bcd de 4 bits
     );
 end component;
 
+component counter5 is
+    port(
+        CLK, R : in std_logic;
+        Tclk : out std_logic;
+        Q : out std_logic_vector(0 to 3)
+    );
+end component;
+
 component decoder is
     port(
         dcba : in std_logic_vector(0 to 3);
@@ -55,7 +63,7 @@ begin
     freqDiv : freqDivider port map ( clkIN => Clock_50 , freqOut => oneHz );
     
     ctr0 : counter port map ( CLK => clkCounter0, R => counterReset, Tclk => tclk0 , Q => ctr0Q);
-    ctr1 : counter port map ( CLK => tclk0, R => counterReset, Tclk => tclk1, Q => ctr1Q);
+    ctr1 : counter5 port map ( CLK => tclk0, R => counterReset, Tclk => tclk1, Q => ctr1Q);
     ctr2 : counter port map ( CLK => tclk1, R => counterReset, Tclk => tclk2, Q => ctr2Q);
     ctr3 : counter port map ( CLK => tclk2, R => counterReset, Tclk => tclk3 , Q => ctr3Q);
     

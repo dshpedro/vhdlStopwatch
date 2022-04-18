@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Sat Apr 16 17:19:50 2022
+Mon Apr 18 18:13:05 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -46,7 +46,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Apr 16 17:19:50 2022       ;
+; Analysis & Synthesis Status     ; Successful - Mon Apr 18 18:13:05 2022       ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                   ; main                                        ;
 ; Top-level Entity Name           ; main                                        ;
@@ -180,6 +180,7 @@ https://fpgasoftware.intel.com/eula.
 ; decoder.vhd                      ; yes             ; User VHDL File  ; C:/Users/pedro/Documents/GitHub/vhdlStopwatch/decoder.vhd     ;         ;
 ; freqDivider.vhd                  ; yes             ; User VHDL File  ; C:/Users/pedro/Documents/GitHub/vhdlStopwatch/freqDivider.vhd ;         ;
 ; latchRS.vhd                      ; yes             ; User VHDL File  ; C:/Users/pedro/Documents/GitHub/vhdlStopwatch/latchRS.vhd     ;         ;
+; counter5.vhd                     ; yes             ; User VHDL File  ; C:/Users/pedro/Documents/GitHub/vhdlStopwatch/counter5.vhd    ;         ;
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
 
 
@@ -194,8 +195,8 @@ https://fpgasoftware.intel.com/eula.
 ;     -- 7 input functions                    ; 0              ;
 ;     -- 6 input functions                    ; 6              ;
 ;     -- 5 input functions                    ; 0              ;
-;     -- 4 input functions                    ; 36             ;
-;     -- <=3 input functions                  ; 49             ;
+;     -- 4 input functions                    ; 37             ;
+;     -- <=3 input functions                  ; 48             ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 49             ;
 ;                                             ;                ;
@@ -205,8 +206,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; Clock_50~input ;
 ; Maximum fan-out                             ; 33             ;
-; Total fan-out                               ; 482            ;
-; Average fan-out                             ; 2.36           ;
+; Total fan-out                               ; 483            ;
+; Average fan-out                             ; 2.37           ;
 +---------------------------------------------+----------------+
 
 
@@ -216,8 +217,8 @@ https://fpgasoftware.intel.com/eula.
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name       ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------+-------------+--------------+
 ; |main                      ; 91 (2)              ; 49 (0)                    ; 0                 ; 0          ; 32   ; 0            ; |main                     ; main        ; work         ;
+;    |counter5:ctr1|         ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main|counter5:ctr1       ; counter5    ; work         ;
 ;    |counter:ctr0|          ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main|counter:ctr0        ; counter     ; work         ;
-;    |counter:ctr1|          ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main|counter:ctr1        ; counter     ; work         ;
 ;    |counter:ctr2|          ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main|counter:ctr2        ; counter     ; work         ;
 ;    |counter:ctr3|          ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |main|counter:ctr3        ; counter     ; work         ;
 ;    |decoder:decod0|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|decoder:decod0      ; decoder     ; work         ;
@@ -290,8 +291,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ;     normal            ; 63                          ;
 ;         1 data inputs ; 9                           ;
 ;         2 data inputs ; 7                           ;
-;         3 data inputs ; 5                           ;
-;         4 data inputs ; 36                          ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 37                          ;
 ;         6 data inputs ; 6                           ;
 ; boundary_port         ; 32                          ;
 ;                       ;                             ;
@@ -315,7 +316,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Sat Apr 16 17:19:45 2022
+    Info: Processing started: Mon Apr 18 18:12:59 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off stopwatch -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -334,14 +335,18 @@ Info (12021): Found 2 design units, including 1 entities, in source file freqdiv
 Info (12021): Found 2 design units, including 1 entities, in source file latchrs.vhd
     Info (12022): Found design unit 1: latchRS-behav File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/latchRS.vhd Line: 12
     Info (12023): Found entity 1: latchRS File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/latchRS.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file counter5.vhd
+    Info (12022): Found design unit 1: counter5-behav File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/counter5.vhd Line: 15
+    Info (12023): Found entity 1: counter5 File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/counter5.vhd Line: 7
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(49): object "tclk3" assigned a value but never read File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 49
-Info (12128): Elaborating entity "latchRS" for hierarchy "latchRS:lat" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 54
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(57): object "tclk3" assigned a value but never read File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 57
+Info (12128): Elaborating entity "latchRS" for hierarchy "latchRS:lat" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 62
 Warning (10631): VHDL Process Statement warning at latchRS.vhd(14): inferring latch(es) for signal or variable "Q", which holds its previous value in one or more paths through the process File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/latchRS.vhd Line: 14
 Info (10041): Inferred latch for "Q" at latchRS.vhd(14) File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/latchRS.vhd Line: 14
-Info (12128): Elaborating entity "freqDivider" for hierarchy "freqDivider:freqDiv" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 55
-Info (12128): Elaborating entity "counter" for hierarchy "counter:ctr0" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 57
-Info (12128): Elaborating entity "decoder" for hierarchy "decoder:decod0" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 62
+Info (12128): Elaborating entity "freqDivider" for hierarchy "freqDivider:freqDiv" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 63
+Info (12128): Elaborating entity "counter" for hierarchy "counter:ctr0" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 65
+Info (12128): Elaborating entity "counter5" for hierarchy "counter5:ctr1" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 66
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:decod0" File: C:/Users/pedro/Documents/GitHub/vhdlStopwatch/main.vhd Line: 70
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -350,9 +355,9 @@ Info (21057): Implemented 123 device resources after synthesis - the final resou
     Info (21059): Implemented 28 output pins
     Info (21061): Implemented 91 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4908 megabytes
-    Info: Processing ended: Sat Apr 16 17:19:50 2022
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 4909 megabytes
+    Info: Processing ended: Mon Apr 18 18:13:05 2022
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:11
 
 
