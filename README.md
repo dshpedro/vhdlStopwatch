@@ -1,2 +1,2 @@
 # vhdlStopWatch
-cronômetro de minutos e segundos em vhdl
+stopwatch in vhdl that counts from hundredths to 99 seconds
