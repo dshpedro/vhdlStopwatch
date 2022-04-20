@@ -19,7 +19,7 @@ begin
     if rising_edge(clkIN) then
         i <= i + 1;
     
-    if i = 50000000 then
+    if i = 250000 then -- 100Hz
         tmp <= not tmp;
         i <= 1;
     end if;
